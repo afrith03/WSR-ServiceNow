@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_entry">
+    <sys_transform_entry action="INSERT_OR_UPDATE">
+        <choice_action>create</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd</date_format>
+        <map display_value="WSR transform">6be49ca8db112110cb16b7e8f49619b0</map>
+        <reference_value_field/>
+        <source_field>[Script]</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+var dt = source.u_resolve_date;
+  gs.log(dt, "youthuu");
+    var newDt = new GlideDateTime(dt);
+    return newDt;
+ // return the value to be put into the target field
+
+})(source);]]></source_script>
+        <source_table>u_wsr_staging_table</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-25 06:45:22</sys_created_on>
+        <sys_id>6c8c14a0db512110cb16b7e8f4961995</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>[Script]</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_transform_entry_6c8c14a0db512110cb16b7e8f4961995</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-01 19:28:24</sys_updated_on>
+        <target_field>u_resolve_date_time</target_field>
+        <target_table>u_wsr_table</target_table>
+        <use_source_script>true</use_source_script>
+    </sys_transform_entry>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a5237d1250000001</claim_timestamp>
+        <metadata_update_name>sys_transform_entry_6c8c14a0db512110cb16b7e8f4961995</metadata_update_name>
+        <previous_claim_app_version>2.4.1</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-01 19:28:24</sys_created_on>
+        <sys_id>62061bc197c17950e24677d71153afc5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-01 19:28:24</sys_updated_on>
+    </sys_claim>
+</record_update>
