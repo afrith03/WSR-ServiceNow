@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="DELETE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>logger</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    gs.log("Afrith----------------->"+JSON.stringify(request) +"reqsopnse "+response)
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/821846/afrith</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-31 05:54:54</sys_created_on>
+        <sys_id>e1d19f64978db550e24677d71153af3f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>logger</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_ws_operation_e1d19f64978db550e24677d71153af3f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-31 06:08:56</sys_updated_on>
+        <web_service_definition display_value="afrith">be915b64978db550e24677d71153af8b</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>5ebe12d3db0e28500b9d21c40596192e</instance_id>
+        <instance_name>dev105977</instance_name>
+        <name>sys_ws_operation_e1d19f64978db550e24677d71153af3f</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ws_operation"&gt;&lt;sys_ws_operation action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;consumes&gt;application/json,application/xml,text/xml&lt;/consumes&gt;&lt;consumes_customized&gt;false&lt;/consumes_customized&gt;&lt;default_operation_uri/&gt;&lt;enforce_acl&gt;cf9d01d3e73003009d6247e603f6a990&lt;/enforce_acl&gt;&lt;http_method&gt;GET&lt;/http_method&gt;&lt;name&gt;logger&lt;/name&gt;&lt;operation_script&gt;&lt;![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    gs.log("Afrith-----------------&gt;"+JSON.stringify(request) +"reqsopnse "+response)
+
+})(request, response);]]&gt;&lt;/operation_script&gt;&lt;operation_uri&gt;/api/821846/afrith&lt;/operation_uri&gt;&lt;produces&gt;application/json,application/xml,text/xml&lt;/produces&gt;&lt;produces_customized&gt;false&lt;/produces_customized&gt;&lt;relative_path&gt;/&lt;/relative_path&gt;&lt;request_example/&gt;&lt;requires_acl_authorization&gt;true&lt;/requires_acl_authorization&gt;&lt;requires_authentication&gt;true&lt;/requires_authentication&gt;&lt;requires_snc_internal_role&gt;true&lt;/requires_snc_internal_role&gt;&lt;short_description/&gt;&lt;sys_class_name&gt;sys_ws_operation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-08-31 05:54:54&lt;/sys_created_on&gt;&lt;sys_id&gt;e1d19f64978db550e24677d71153af3f&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;logger&lt;/sys_name&gt;&lt;sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb"&gt;97abf65397307150e24677d71153afeb&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ws_operation_e1d19f64978db550e24677d71153af3f&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-08-31 06:08:56&lt;/sys_updated_on&gt;&lt;web_service_definition display_value="afrith"&gt;be915b64978db550e24677d71153af8b&lt;/web_service_definition&gt;&lt;web_service_version/&gt;&lt;/sys_ws_operation&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1495389737</payload_hash>
+        <record_name>logger</record_name>
+        <reverted_from/>
+        <source>722d47b9e8a1211076da10591ad287d8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-31 06:08:56</sys_created_on>
+        <sys_id>06751328978db550e24677d71153aff2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18a4a3588a20000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-31 06:08:56</sys_updated_on>
+        <type>Scripted REST Resource</type>
+        <update_guid>0e751328fc8db55026d5180edbeee4f1</update_guid>
+        <update_guid_history>0e751328fc8db55026d5180edbeee4f1:1495389737,3a151f64d28db550f9d3f4cf68b59b99:1028408349,ac4257a47d8db5503fc9ccbbb609a8f3:1694109527</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-01 19:03:46</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_operation">sys_ws_operation</sys_db_object>
+        <sys_id>048032e02027407c83b36b1a9f8bcd29</sys_id>
+        <sys_metadata>e1d19f64978db550e24677d71153af3f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>logger</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>sys_ws_operation_e1d19f64978db550e24677d71153af3f</sys_update_name>
+        <sys_update_version display_value="sys_ws_operation_e1d19f64978db550e24677d71153af3f">06751328978db550e24677d71153aff2</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-01 19:03:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
