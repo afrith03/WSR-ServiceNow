@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>global.wsr_utils</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>wsr_utils</name>
+        <script><![CDATA[var wsr_utils = Class.create();
+wsr_utils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+
+    'getStatus': function() {
+        try {
+            var resObj = {};
+            var sysIdList = this.getParameter('sysparm_sysIdList');
+            var gr = new GlideRecord('u_wsr_table');
+            gr.addEncodedQuery('sys_idIN' + sysIdList);
+            gr.query();
+            var count = gr.getRowCount();
+            resObj.totalCount = count;
+            resObj.incidents = 0;
+            resObj.extraService = 0;
+            resObj.enquiry = 0;
+            resObj.unknownType = 0;
+            resObj.resolved = 0;
+            resObj.internalApproval = 0;
+            resObj.onHold = 0;
+            resObj.userToValidate = 0;
+            resObj.internalDependency = 0;
+            resObj.userToTakeAction = 0;
+            resObj.additionalInfoNeededFromUser = 0;
+            resObj.monitoring = 0;
+            resObj.thirdParty = 0;
+            resObj.inProgress = 0;
+            resObj.unknown = 0;
+            while (gr.next()) {
+                switch (gr.u_incident_type.toString()) {
+                    case 'Extra Service':
+                        resObj.extraService += 1;
+                        break;
+                    case 'Incident':
+                        resObj.incidents += 1;
+                        break;
+                    case 'Inquiry':
+                        resObj.enquiry += 1;
+                        break;
+                    default:
+                        resObj.unknownType += 1;
+                }
+                if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
+                    resObj.resolved += 1;
+                } else {
+                    if (!gr.u_status_reason.toString() && gr.u_status.toString() == 'In Progress') {
+                        resObj.inProgress += 1;
+                    } else {
+                        switch (gr.u_status_reason.toString()) {
+                            case 'Waiting for internal approval':
+                                resObj.internalApproval += 1;
+                                break;
+                            case 'Hold Ticket per Users Request':
+                                resObj.onHold += 1;
+                                break;
+                            case 'Waiting for User to Validate':
+                                resObj.userToValidate += 1;
+                                break;
+                            case 'Internal Dependency':
+                                resObj.internalDependency += 1;
+                                break;
+                            case 'Waiting for User to Take Action':
+                                resObj.userToTakeAction += 1;
+                                break;
+                            case 'Additional Info Needed From User':
+                                resObj.additionalInfoNeededFromUser += 1;
+                                break;
+                            case 'Monitoring':
+                                resObj.monitoring += 1;
+                                break;
+                            case 'Waiting for 3rd party vendor to take act':
+                                resObj.thirdParty += 1;
+                                break;
+                            default:
+                                resObj.unknown += 1;
+                        }
+                    }
+                }
+            }
+            gs.eventQueue("wsr data", resObj, 'flamefayaz03@gmail.com', '');
+            return JSON.stringify(resObj);
+        } catch (error) {
+            gs.log("error is " + error);
+        }
+    },
+    'getStatusUserwise': function() {
+        try {
+            var resObj = {};
+            // var sysIdList = this.getParameter('sysparm_sysIdList');
+            var gr = new GlideRecord('u_wsr_table');
+            gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^u_assiginee_name!=Others^ORu_assiginee_name=NULL');
+            gr.query();
+            var count = gr.getRowCount();
+            resObj.totalCount = count;
+            resObj.incidents = 0;
+            resObj.extraService = 0;
+            resObj.enquiry = 0;
+            resObj.unknownType = 0;
+            resObj.resolved = 0;
+            resObj.internalApproval = 0;
+            resObj.onHold = 0;
+            resObj.userToValidate = 0;
+            resObj.internalDependency = 0;
+            resObj.userToTakeAction = 0;
+            resObj.additionalInfoNeededFromUser = 0;
+            resObj.monitoring = 0;
+            resObj.thirdParty = 0;
+            resObj.unknown = 0;
+            while (gr.next()) {
+                switch (gr.u_incident_type.toString()) {
+                    case 'Extra Service':
+                        resObj.extraService += 1;
+                        break;
+                    case 'Incident':
+                        resObj.incidents += 1;
+                        break;
+                    case 'Inquiry':
+                        resObj.enquiry += 1;
+                        break;
+                    default:
+                        resObj.unknownType += 1;
+                }
+                if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
+                    resObj.resolved += 1;
+                } else {
+                    switch (gr.u_status_reason.toString()) {
+                        case 'Waiting for internal approval':
+                            resObj.internalApproval += 1;
+                            break;
+                        case 'Hold Ticket per Users Request':
+                            resObj.onHold += 1;
+                            break;
+                        case 'Waiting for User to Validate':
+                            resObj.userToValidate += 1;
+                            break;
+                        case 'Internal Dependency':
+                            resObj.internalDependency += 1;
+                            break;
+                        case 'Waiting for User to Take Action':
+                            resObj.userToTakeAction += 1;
+                            break;
+                        case 'Additional Info Needed From User':
+                            resObj.additionalInfoNeededFromUser += 1;
+                            break;
+                        case 'Monitoring':
+                            resObj.monitoring += 1;
+                            break;
+                        case 'Waiting for 3rd party vendor to take act':
+                            resObj.thirdParty += 1;
+                            break;
+                        default:
+                            resObj.unknown += 1;
+                    }
+                }
+            }
+            return JSON.stringify(resObj);
+        } catch (error) {
+            gs.log("error is " + error);
+        }
+    },
+    //Afrith Individual data
+    'individualReportWSR': function() {
+        // sysparm_wsrData
+        var wsrInfo = this.getParameter('sysparm_wsrData')
+        var gr = new GlideRecord("u_wsr_table");
+        gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_status=In Progress^ORu_status=Pending^u_assiginee_name!=Others');
+        gr.query();
+        var total = gr.getRowCount();
+
+        gs.log("wreindividual" + total);
+        var indData = new global.IndividualReport();
+        var dataObject = {
+            sshanawaz: {
+                resolved: Number(indData.getResolvedcount("sshanawaz")),
+                totalTicket: Number(indData.getTotalcount("sshanawaz")),
+                inProgress: Number(indData.getInProgressCount("sshanawaz"))
+            },
+            ay2: {
+                inProgress: Number(indData.getInProgressCount("ay2")),
+                resolved: Number(indData.getResolvedcount("ay2")),
+                totalTicket: Number(indData.getTotalcount("ay2"))
+            },
+            mr11: {
+                inProgress: Number(indData.getInProgressCount("mr11")),
+                resolved: Number(indData.getResolvedcount("mr11")),
+                totalTicket: Number(indData.getTotalcount("mr11"))
+            },
+            totalTickets: total,
+        };
+        var inprog = dataObject.ay2.inProgress + dataObject.sshanawaz.inProgress + dataObject.mr11.inProgress;
+        var resvld = dataObject.ay2.resolved + dataObject.sshanawaz.resolved + dataObject.mr11.resolved;
+        var sentToEvent = JSON.stringify(dataObject);
+        var htmlData = "<style>  table,  td,  th {    border: 1px solid black;    text-align: center;  }  th,  td {    padding: 3px;  }</style><table>  <tr>    <th>Candidate</th>    <th>Inprogress</th>    <th>Resolved</th>    <th>Total</th>    <th>Work Orders</th>  </tr>  <tr>    <td>" + "Shanawaz" + "</td>    <td>" + dataObject.sshanawaz.inProgress + "</td>    <td>" + dataObject.sshanawaz.resolved + "</td>    <td>" + dataObject.sshanawaz.totalTicket + "</td>    <td>" + 0 + "</td>  </tr>  " + "  <tr>    <td>" + "Afrith" + "</td>    <td>" + dataObject.ay2.inProgress + "</td>    <td>" + dataObject.ay2.resolved + "</td>    <td>" + dataObject.ay2.totalTicket + "</td>    <td>" + 0 + "</td>  </tr>  " + "  <tr>    <td>" + " Shakeel" + "</td>    <td>" + dataObject.mr11.inProgress + "</td>    <td>" + dataObject.mr11.resolved + "</td>    <td>" + dataObject.mr11.totalTicket + "</td>    <td>" + 0 + "</td>  </tr>  " + "  <tr>    <td>" + "Team Total" + "</td>    <td>" + inprog + "</td>    <td>" + resvld + "</td>    <td>" + total + "</td>  <td>" + 0 + "</td>  </tr>  " + "</table>";
+        gs.log("wreindividual" + sentToEvent);
+        gs.eventQueue('wsr.individual', current, wsrInfo, htmlData);
+        return "Event Scheduled";
+    },
+    'dailyStatus': function() {
+        //variables
+        var incidentId, summary, status = "";
+        var htmlData = "";
+        var ticketCount = "";
+        var tickets = this.getParameter('sysparm_dailyTickets');
+        var gr = new GlideRecord('u_wsr_table');
+        gr.addEncodedQuery('sys_idIN' + tickets);
+        gr.query();
+        var count = gr.getRowCount();
+        gs.log('Daily reports========================>' + count);
+        while (gr.next()) {
+            incidentId = gr.u_incident_id;
+            summary = gr.u_resolution;
+            status = gr.u_status_reason;
+			gs.log("qwerty"+summary);
+            var a = new GlideDate();
+            a.setValue(gr.u_create_date_time);
+            var today = gs.now();
+            var differ = gs.dateDiff(a, today, false).toString();
+            var aging = differ.replace("00:00:00", " ") == " "? "New (Today's Ticket)": differ.replace("00:00:00", " ");
+
+            htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number :" + incidentId + "</b></h4>   <b>Summary:</b> <br/> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging : " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Status : " + status + "</b></h5> <b>-----------------------------------------------------------</b></div>";
+
+            ticketCount = ticketCount + "<h5><b>" + incidentId + "</b></h5>";
+        }
+        gs.eventQueue('daily.status.lenovo', current, htmlData, ticketCount);
+        return "event schedule complete";
+    },
+    type: 'wsr_utils'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-25 07:15:27</sys_created_on>
+        <sys_id>1f82ec28db512110cb16b7e8f4961969</sys_id>
+        <sys_mod_count>59</sys_mod_count>
+        <sys_name>wsr_utils</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_script_include_1f82ec28db512110cb16b7e8f4961969</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 09:48:44</sys_updated_on>
+    </sys_script_include>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a35d220540000001</claim_timestamp>
+        <metadata_update_name>sys_script_include_1f82ec28db512110cb16b7e8f4961969</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-27 07:07:57</sys_created_on>
+        <sys_id>2b9cfa5b97b07150e24677d71153af0c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 07:07:57</sys_updated_on>
+    </sys_claim>
+</record_update>

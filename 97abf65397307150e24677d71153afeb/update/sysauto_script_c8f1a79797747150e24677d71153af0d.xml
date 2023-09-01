@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <max_drift/>
+        <name>WSR sync tickets</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Afrith  Admin">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2023-08-27 09:51:01</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[ var endpoint = "https://shanawaz-test1.s3.ap-south-1.amazonaws.com/1693129730039-response.json";
+ var data_src = "50a6271f97747150e24677d71153af5c";
+ try {
+     var restRequest = new sn_ws.RESTMessageV2();
+     restRequest.setHttpMethod('POST');
+     restRequest.setEndpoint(endpoint);
+     restRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+     restRequest.setRequestHeader("Authorization", "Bearer " + tokenid);
+     restRequest.setRequestBody({
+         secretcode: "youth"
+     });
+     restRequest.saveResponseBodyAsAttachment('sys_data_source', data_src, 'TicketData.json');
+     gs.log("WSRDATASYNC");
+     var resBody = restRequest.executeAsync();
+     var status = resBody.getStatusCode();
+ } catch (ex) {
+     responseBody = ex.getMessage();
+     // status = '500';
+     gs.log("WSRDATASYNC" + responseBody);
+ }]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-27 09:51:34</sys_created_on>
+        <sys_id>c8f1a79797747150e24677d71153af0d</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>WSR sync tickets</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sysauto_script_c8f1a79797747150e24677d71153af0d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 10:26:19</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="u_wsr_table" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_assiginee_name</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>5596491797722110e24677d71153afc7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_assignee</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>d996491797722110e24677d71153afc7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_business_categorization3</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>5d96491797722110e24677d71153afc7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_closed_date</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>dd96491797722110e24677d71153afc7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_create_date</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>5196491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_create_date_time</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>d196491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_customer_id</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>5596491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_incident_id</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>d596491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_incident_type</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>5996491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>u_last_modified_date</element>
+            <list_id display_value="u_wsr_table" element="NULL" name="u_wsr_table" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">5996491797722110e24677d71153afc6</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_id>d996491797722110e24677d71153afc8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-05-19 12:26:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>u_wsr_table</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-05-19 12:26:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5996491797722110e24677d71153afc6</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_name>u_wsr_table</sys_name>
+            <sys_package display_value="Global" source="global">global</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+            <sys_update_name>sys_ui_list_u_wsr_table_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-08-27 07:08:08</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a35d248030000001</claim_timestamp>
+        <metadata_update_name>sys_ui_list_u_wsr_table_null</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-27 07:08:08</sys_created_on>
+        <sys_id>06acfe5b97b07150e24677d71153af7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 07:08:08</sys_updated_on>
+    </sys_claim>
+</record_update>
