@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="DELETE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>process.inbound.tickets</event_name>
+        <name>process inbound tickets</name>
+        <order>100</order>
+        <script><![CDATA[var parameter1 = event.parm1;
+var parameter2 = event.parm2;
+
+gs.log("qwertyyyyy_________________>>>"+parameter1+parameter2);]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 05:47:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>0ea365d1974d7950e24677d71153afab</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>process inbound tickets</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sysevent_script_action_0ea365d1974d7950e24677d71153afab</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:59:12</sys_updated_on>
+    </sysevent_script_action>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>5ebe12d3db0e28500b9d21c40596192e</instance_id>
+        <instance_name>dev105977</instance_name>
+        <name>sysevent_script_action_0ea365d1974d7950e24677d71153afab</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_script_action"&gt;&lt;sysevent_script_action action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;condition_script/&gt;&lt;description/&gt;&lt;event_name&gt;process.inbound.tickets&lt;/event_name&gt;&lt;name&gt;process inbound tickets&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[var parameter1 = event.parm1;
+var parameter2 = event.parm2;
+
+gs.log("qwertyyyyy_________________&gt;&gt;&gt;"+parameter1+parameter2);]]&gt;&lt;/script&gt;&lt;synchronous&gt;false&lt;/synchronous&gt;&lt;sys_class_name&gt;sysevent_script_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-09-02 05:47:59&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;0ea365d1974d7950e24677d71153afab&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;process inbound tickets&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb"&gt;97abf65397307150e24677d71153afeb&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_script_action_0ea365d1974d7950e24677d71153afab&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-09-02 05:59:12&lt;/sys_updated_on&gt;&lt;/sysevent_script_action&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1376510788</payload_hash>
+        <record_name>process inbound tickets</record_name>
+        <reverted_from/>
+        <source>973e8b4997817950e24677d71153af46</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 05:59:12</sys_created_on>
+        <sys_id>be662995974d7950e24677d71153af33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18a547954a70000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:59:12</sys_updated_on>
+        <type>Script Action</type>
+        <update_guid>76662995c24d7950f6d946f7f6437333</update_guid>
+        <update_guid_history>76662995c24d7950f6d946f7f6437333:-1376510788,a5e36591974d79504cec74c01589edb6:-247595157,a2d369d1a54d795021c47b0e95e6d451:1442312394</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 17:32:44</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_script_action">sysevent_script_action</sys_db_object>
+        <sys_id>08962632958d462a8f4d7e28091d2e29</sys_id>
+        <sys_metadata>0ea365d1974d7950e24677d71153afab</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>process inbound tickets</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>sysevent_script_action_0ea365d1974d7950e24677d71153afab</sys_update_name>
+        <sys_update_version display_value="sysevent_script_action_0ea365d1974d7950e24677d71153afab">be662995974d7950e24677d71153af33</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 17:32:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

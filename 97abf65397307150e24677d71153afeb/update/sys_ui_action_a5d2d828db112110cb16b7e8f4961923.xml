@@ -50,11 +50,14 @@ function getAnswer(response) {
     var answer = response.responseXML.documentElement.getAttribute("answer");
     var resObj = JSON.parse(answer);
     var wSRInfo = 'Team has worked on ' + resObj.totalCount + ' tickets in which resolved count is ' + resObj.resolved + ' and 0 work orders  (' + resObj.incidents + ' - Incident | ' + resObj.extraService + ' - Extra service | ' + resObj.enquiry + ' - Query). The remaining  tickets status are [(a) Waiting for internal Approval: ' + resObj.internalApproval + ' | (b)Waiting for 3rd party vendor to take action: ' + resObj.thirdParty + ' | (c) Monitoring: ' + resObj.monitoring + ' |(d) Additional info needed from user: ' + resObj.additionalInfoNeededFromUser + ' |(e) Internal dependency: ' + resObj.internalDependency + ' | (f) In progress : ' + resObj.inProgress + ' | (g) on hold : ' + resObj.onHold + '  |(h) user to validate : ' + resObj.userToValidate + ']';
+
+    var newWSRInfo = '<ol style="list-style: decimal">  <li>    <p>      The team has diligently attended to a total of ' + resObj.totalCount + '      tickets within the specified week.    </p>  </li>  <li>    <p>   Among these,  ' + resObj.resolved + ' tickets have been effectively resolved, while ' + resObj.userToValidate + ' are currently awaiting validation from the user.</p>  </li>  <li>   <p>Notably, there were XX work orders addressed during this period.</p>  </li>  <li>    <p>The breakdown of ticket types is as follows:</p>    <ul style="list-style: disc">      <li>Incidents: ' + resObj.incidents + '</li>      <li>Extra Service Requests: ' + resObj.extraService + '</li>      <li>Queries: ' + resObj.enquiry + '</li>    </ul>  </li>  <li>    <p>The status of all the tickets is categorized as follows:</p>    <ul style="list-style: disc">      <li>Awaiting Internal Approval: ' + resObj.internalApproval + '</li>      <li>        Awaiting Action from Third-party Vendors: ' + resObj.thirdParty + '      </li>      <li>Under Monitoring: ' + resObj.monitoring + '</li>      <li>        Pending Additional Information from Users: ' + resObj.additionalInfoNeededFromUser + '      </li>      <li>Internal Dependencies: ' + resObj.internalDependency + '</li>      <li>Currently In Progress: ' + resObj.inProgress + '</li>      <li>On Hold: ' + resObj.onHold + '</li>      <li>Pending User Validation: ' + resObj.userToValidate + '</li>    </ul>  </li></ol>';
+
     console.log(wSRInfo);
 
     var individualInfo = new GlideAjax("global.wsr_utils");
     individualInfo.addParam('sysparm_name', 'individualReportWSR');
-    individualInfo.addParam('sysparm_wsrData', wSRInfo);
+    individualInfo.addParam('sysparm_wsrData', newWSRInfo);
     individualInfo.getXML(alertTheUser);
 
 }]]></script>
@@ -68,7 +71,7 @@ function getAnswer(response) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a5d2d828db112110cb16b7e8f4961923</sys_id>
-        <sys_mod_count>52</sys_mod_count>
+        <sys_mod_count>57</sys_mod_count>
         <sys_name>Weekly Report Dyooti</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -76,7 +79,7 @@ function getAnswer(response) {
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ui_action_a5d2d828db112110cb16b7e8f4961923</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-27 07:12:16</sys_updated_on>
+        <sys_updated_on>2023-09-02 18:25:18</sys_updated_on>
         <table>u_wsr_table</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>

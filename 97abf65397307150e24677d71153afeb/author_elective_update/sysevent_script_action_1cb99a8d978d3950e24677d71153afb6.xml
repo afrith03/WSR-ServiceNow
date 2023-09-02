@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="DELETE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>process.inbound.tickets</event_name>
+        <name>Process inbound tickets</name>
+        <order>100</order>
+        <script><![CDATA[void function(event, current, source) {
+
+    try {
+		gs.log('event parm'+event.parm1);
+        orderRef = new asyncTicketCreator();
+        orderRef.createTicket(event.parm1);
+    } catch (error) {
+        gs.logError("error = " + error);
+    }
+}(event, current, "process_cisco_request");]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>shanawaz@dyooti.com</sys_created_by>
+        <sys_created_on>2023-09-01 15:08:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1cb99a8d978d3950e24677d71153afb6</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Process inbound tickets</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sysevent_script_action_1cb99a8d978d3950e24677d71153afb6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:43:34</sys_updated_on>
+    </sysevent_script_action>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a546b05b40000001</claim_timestamp>
+        <metadata_update_name>sysevent_script_action_1cb99a8d978d3950e24677d71153afb6</metadata_update_name>
+        <previous_claim_app_version>2.4.1</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 05:43:34</sys_created_on>
+        <sys_id>39d26591974d7950e24677d71153afaf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:43:34</sys_updated_on>
+    </sys_claim>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>5ebe12d3db0e28500b9d21c40596192e</instance_id>
+        <instance_name>dev105977</instance_name>
+        <name>sysevent_script_action_1cb99a8d978d3950e24677d71153afb6</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_script_action"&gt;&lt;sysevent_script_action action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;condition_script/&gt;&lt;description/&gt;&lt;event_name&gt;process.inbound.tickets&lt;/event_name&gt;&lt;name&gt;Process inbound tickets&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;script&gt;&lt;![CDATA[void function(event, current, source) {
+
+    try {
+		gs.log('event parm'+event.parm1);
+        orderRef = new asyncTicketCreator();
+        orderRef.createTicket(event.parm1);
+    } catch (error) {
+        gs.logError("error = " + error);
+    }
+}(event, current, "process_cisco_request");]]&gt;&lt;/script&gt;&lt;synchronous&gt;false&lt;/synchronous&gt;&lt;sys_class_name&gt;sysevent_script_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;shanawaz@dyooti.com&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-09-01 15:08:54&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;1cb99a8d978d3950e24677d71153afb6&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Process inbound tickets&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_script_action_1cb99a8d978d3950e24677d71153afb6&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-09-02 05:43:34&lt;/sys_updated_on&gt;&lt;/sysevent_script_action&gt;&lt;sys_claim action="INSERT_OR_UPDATE"&gt;&lt;claim_owner_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/claim_owner_scope&gt;&lt;claim_timestamp&gt;18a546b05b40000001&lt;/claim_timestamp&gt;&lt;metadata_update_name&gt;sysevent_script_action_1cb99a8d978d3950e24677d71153afb6&lt;/metadata_update_name&gt;&lt;previous_claim_app_version&gt;2.4.1&lt;/previous_claim_app_version&gt;&lt;previous_claim_name&gt;WSR&lt;/previous_claim_name&gt;&lt;previous_claim_scope&gt;97abf65397307150e24677d71153afeb&lt;/previous_claim_scope&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-09-02 05:43:34&lt;/sys_created_on&gt;&lt;sys_id&gt;39d26591974d7950e24677d71153afaf&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-09-02 05:43:34&lt;/sys_updated_on&gt;&lt;/sys_claim&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>622709994</payload_hash>
+        <record_name>Process inbound tickets</record_name>
+        <reverted_from/>
+        <source>973e8b4997817950e24677d71153af46</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 05:43:34</sys_created_on>
+        <sys_id>fdd26591974d7950e24677d71153afb1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18a546b05d90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:43:34</sys_updated_on>
+        <type>Script Action</type>
+        <update_guid>f5d26591204d7950bf8290b4c3590cb1</update_guid>
+        <update_guid_history>f5d26591204d7950bf8290b4c3590cb1:622709994,b317628d24cd395011e520bc94dbe2f5:1577002789,b1e566c5b2cd3950413f2653ae45452b:-1009998809,dca12205d4cd39502fc15431242cedb0:1577002789,5a3fde051dcd39505864d77693be8c9e:-1158153821,c45d52816dcd3950a8438fed06f7ab7e:-1161250431,d9aa9a8d298d3950ca9db565521a807a:-1158153821</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 05:46:46</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_script_action">sysevent_script_action</sys_db_object>
+        <sys_id>098b5fe0490d442e9156857ba80edf11</sys_id>
+        <sys_metadata>1cb99a8d978d3950e24677d71153afb6</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Process inbound tickets</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>sysevent_script_action_1cb99a8d978d3950e24677d71153afb6</sys_update_name>
+        <sys_update_version display_value="sysevent_script_action_1cb99a8d978d3950e24677d71153afb6">fdd26591974d7950e24677d71153afb1</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 05:46:46</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

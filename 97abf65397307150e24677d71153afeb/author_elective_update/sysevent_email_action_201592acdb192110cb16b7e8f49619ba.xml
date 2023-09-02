@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="DELETE">
+        <action_insert>false</action_insert>
+        <action_update>false</action_update>
+        <active>false</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Reporting" name="Reporting">695e16e37f1132005f58108c3ffa9141</category>
+        <collection>u_wsr_table</collection>
+        <condition/>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <enable_dynamic_translation>false</enable_dynamic_translation>
+        <event_name>wsr data</event_name>
+        <event_parm_1>true</event_parm_1>
+        <event_parm_2>true</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>event</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>Demo</p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>WSR Data</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields/>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>true</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>testing</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-25 15:33:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>201592acdb192110cb16b7e8f49619ba</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>WSR Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sysevent_email_action_201592acdb192110cb16b7e8f49619ba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 07:07:58</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
+        <type>email</type>
+        <weight>0</weight>
+    </sysevent_email_action>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a35d224690000001</claim_timestamp>
+        <metadata_update_name>sysevent_email_action_201592acdb192110cb16b7e8f49619ba</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-27 07:07:58</sys_created_on>
+        <sys_id>379cfa5b97b07150e24677d71153af74</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 07:07:58</sys_updated_on>
+    </sys_claim>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>5ebe12d3db0e28500b9d21c40596192e</instance_id>
+        <instance_name>dev105977</instance_name>
+        <name>sysevent_email_action_201592acdb192110cb16b7e8f49619ba</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sysevent_email_action"&gt;&lt;sysevent_email_action action="INSERT_OR_UPDATE"&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_update&gt;false&lt;/action_update&gt;&lt;active&gt;false&lt;/active&gt;&lt;advanced_condition/&gt;&lt;affected_field_on_event/&gt;&lt;category display_value="Reporting" name="Reporting"&gt;695e16e37f1132005f58108c3ffa9141&lt;/category&gt;&lt;collection&gt;u_wsr_table&lt;/collection&gt;&lt;condition/&gt;&lt;content_type&gt;text/html&lt;/content_type&gt;&lt;default_interval/&gt;&lt;description/&gt;&lt;digest_from/&gt;&lt;digest_html/&gt;&lt;digest_reply_to/&gt;&lt;digest_separator_html&gt;&lt;![CDATA[&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;]]&gt;&lt;/digest_separator_html&gt;&lt;digest_separator_text&gt;&lt;![CDATA[\n--------------------------------------------------------------------------------\n]]&gt;&lt;/digest_separator_text&gt;&lt;digest_subject/&gt;&lt;digest_template/&gt;&lt;digest_text/&gt;&lt;digestable&gt;false&lt;/digestable&gt;&lt;enable_dynamic_translation&gt;false&lt;/enable_dynamic_translation&gt;&lt;event_name&gt;wsr data&lt;/event_name&gt;&lt;event_parm_1&gt;true&lt;/event_parm_1&gt;&lt;event_parm_2&gt;true&lt;/event_parm_2&gt;&lt;exclude_delegates&gt;false&lt;/exclude_delegates&gt;&lt;force_delivery&gt;false&lt;/force_delivery&gt;&lt;from/&gt;&lt;generation_type&gt;event&lt;/generation_type&gt;&lt;importance/&gt;&lt;include_attachments&gt;false&lt;/include_attachments&gt;&lt;item&gt;event.parm1&lt;/item&gt;&lt;item_table/&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;message/&gt;&lt;message_html&gt;&lt;![CDATA[&lt;p&gt;Demo&lt;/p&gt;]]&gt;&lt;/message_html&gt;&lt;message_list/&gt;&lt;message_text/&gt;&lt;name&gt;WSR Data&lt;/name&gt;&lt;omit_watermark&gt;false&lt;/omit_watermark&gt;&lt;order&gt;100&lt;/order&gt;&lt;push_message_only&gt;false&lt;/push_message_only&gt;&lt;recipient_fields/&gt;&lt;recipient_groups/&gt;&lt;recipient_users/&gt;&lt;reply_to/&gt;&lt;send_self&gt;true&lt;/send_self&gt;&lt;sms_alternate/&gt;&lt;style/&gt;&lt;subject&gt;testing&lt;/subject&gt;&lt;subscribable&gt;false&lt;/subscribable&gt;&lt;sys_class_name&gt;sysevent_email_action&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-02-25 15:33:46&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;201592acdb192110cb16b7e8f49619ba&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;WSR Data&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/sys_scope&gt;&lt;sys_update_name&gt;sysevent_email_action_201592acdb192110cb16b7e8f49619ba&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-08-27 07:07:58&lt;/sys_updated_on&gt;&lt;sys_version&gt;2&lt;/sys_version&gt;&lt;template display_value="Unsubscribe and Preferences"&gt;7ed0481f3b0b2200c869c2c703efc487&lt;/template&gt;&lt;type&gt;email&lt;/type&gt;&lt;weight&gt;0&lt;/weight&gt;&lt;/sysevent_email_action&gt;&lt;sys_claim action="INSERT_OR_UPDATE"&gt;&lt;claim_owner_scope display_value="WSR"&gt;97abf65397307150e24677d71153afeb&lt;/claim_owner_scope&gt;&lt;claim_timestamp&gt;18a35d224690000001&lt;/claim_timestamp&gt;&lt;metadata_update_name&gt;sysevent_email_action_201592acdb192110cb16b7e8f49619ba&lt;/metadata_update_name&gt;&lt;previous_claim_app_version&gt;1.0.0&lt;/previous_claim_app_version&gt;&lt;previous_claim_name&gt;WSR&lt;/previous_claim_name&gt;&lt;previous_claim_scope&gt;97abf65397307150e24677d71153afeb&lt;/previous_claim_scope&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-08-27 07:07:58&lt;/sys_created_on&gt;&lt;sys_id&gt;379cfa5b97b07150e24677d71153af74&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-08-27 07:07:58&lt;/sys_updated_on&gt;&lt;/sys_claim&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1655920431</payload_hash>
+        <record_name>WSR Data</record_name>
+        <reverted_from/>
+        <source>722d47b9e8a1211076da10591ad287d8</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-27 07:07:58</sys_created_on>
+        <sys_id>3b9cfa5b97b07150e24677d71153af76</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18a35d224850000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-27 07:07:58</sys_updated_on>
+        <type>Notification</type>
+        <update_guid>339cfa5bc6b07150d57ccf23be9f9976</update_guid>
+        <update_guid_history>339cfa5bc6b07150d57ccf23be9f9976:1655920431,f7d0e98f2078fd10c6418c0ddb7e15ba:-746621274,cdb5966c3219211029ea8defc77405ba:-484168599,68751aace51921108cee0293a0ab1574:-1634708412</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 17:34:36</sys_created_on>
+        <sys_db_object display_value="" name="sysevent_email_action">sysevent_email_action</sys_db_object>
+        <sys_id>446f0d76eca545d8b7028f1ba401b710</sys_id>
+        <sys_metadata>201592acdb192110cb16b7e8f49619ba</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>WSR Data</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_parent display_value="WSR Table">300ec8e0db112110cb16b7e8f49619cd</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>sysevent_email_action_201592acdb192110cb16b7e8f49619ba</sys_update_name>
+        <sys_update_version display_value="sysevent_email_action_201592acdb192110cb16b7e8f49619ba">3b9cfa5b97b07150e24677d71153af76</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 17:34:36</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

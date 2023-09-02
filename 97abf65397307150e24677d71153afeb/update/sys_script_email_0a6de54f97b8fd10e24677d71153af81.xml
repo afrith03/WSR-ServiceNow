@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>getdatetimevalueAfrith</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(current, template, email, email_action, event) {
+
+
+    var dt = gs.nowDateTime();
+    dt = dt.toString().split(" ")[0];
+
+
+    var parts = dt.split('-');
+    var year = parts[0];
+    var gd = new GlideDate();
+    var month = gd.getByFormat("MMMM");
+    var day = parts[2];
+
+
+
+
+    var formattedDate = month + '-' + day + '-' + year;
+
+
+    // var formattedDate = gd.getByFormat('dd MMM yyyy');
+
+    //var FinalFormat = gs.now();
+    template.print(formattedDate);
+   // email.setSubject("DaaS L1 Shift HOTO – " + formattedDate);
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-26 06:46:57</sys_created_on>
+        <sys_id>0a6de54f97b8fd10e24677d71153af81</sys_id>
+        <sys_mod_count>27</sys_mod_count>
+        <sys_name>getdatetimevalueAfrith</sys_name>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_script_email_0a6de54f97b8fd10e24677d71153af81</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 18:38:05</sys_updated_on>
+    </sys_script_email>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
+        <claim_timestamp>18a56fe753d0000001</claim_timestamp>
+        <metadata_update_name>sys_script_email_0a6de54f97b8fd10e24677d71153af81</metadata_update_name>
+        <previous_claim_app_version>2.4.1</previous_claim_app_version>
+        <previous_claim_name>WSR</previous_claim_name>
+        <previous_claim_scope>97abf65397307150e24677d71153afeb</previous_claim_scope>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-02 17:43:51</sys_created_on>
+        <sys_id>30b740ed9709b950e24677d71153af6a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-02 17:43:51</sys_updated_on>
+    </sys_claim>
+</record_update>

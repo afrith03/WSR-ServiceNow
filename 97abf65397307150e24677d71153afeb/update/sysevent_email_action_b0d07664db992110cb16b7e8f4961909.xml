@@ -36,15 +36,16 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 14pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Weekly Report for the week ending 25-Aug-2023 (Support Team):</span></strong></span></p>
-<p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 12pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Highlights:</span></strong></span></p>
+        <message_html><![CDATA[<p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 14pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Weekly Report for the week ending </span><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">${mail_script:getdatetimevalueAfrith} </span><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">(Support Team):</span></strong></span></p>
+<p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">This is the weekly status report for the L1 (DaaS) team for the week concluding on ${mail_script:getdatetimevalueAfrith}, as managed by the Support Team. Please find below the salient highlights:</span></span></p>
+<p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 14pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;"><strong>Key Metrics:</strong> </span></span></p>
 <p style="margin-top: 12pt; margin-bottom: 0pt;"><span style="font-size: 12pt; font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">${event.parm1}</span></p>
 <p><span style="font-size: 12pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">ITSM Status:</span></strong></span></p>
 <p><span style="font-size: 10pt; font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">${event.parm2}</span></p>
 <p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 12pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Jira Status:</span></strong></span></p>
 <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
 <div align="left">
-<table style="border: none; width: 85.2396%;"><colgroup><col style="width: 20.4323%;" /><col style="width: 23.4718%;" /><col style="width: 23.4718%;" /><col style="width: 32.7592%;" /></colgroup>
+<table style="border: none; width: 90.9122%;"><colgroup><col style="width: 20.3647%;" /><col style="width: 23.4016%;" /><col style="width: 23.4016%;" /><col style="width: 32.6907%;" /></colgroup>
 <tbody>
 <tr>
 <td style="vertical-align: bottom; border: 0.5pt solid #000000;">
@@ -283,7 +284,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b0d07664db992110cb16b7e8f4961909</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>WSR individual report</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -291,7 +292,7 @@
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sysevent_email_action_b0d07664db992110cb16b7e8f4961909</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-27 07:07:52</sys_updated_on>
+        <sys_updated_on>2023-09-02 18:41:47</sys_updated_on>
         <sys_version>2</sys_version>
         <template display_value="Unsubscribe and Preferences">7ed0481f3b0b2200c869c2c703efc487</template>
         <type>email</type>
