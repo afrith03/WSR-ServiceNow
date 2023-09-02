@@ -225,7 +225,7 @@ wsr_utils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
             var differ = gs.dateDiff(a, today, false).toString();
             var aging = differ.replace("00:00:00", " ") == " "? "New (Today's Ticket)": differ.replace("00:00:00", " ");
 
-            htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number :" + incidentId + "</b></h4>   <b>Summary:</b> <br/> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging : " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Status : " + status + "</b></h5> <b>-----------------------------------------------------------</b></div>";
+            htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number :" + incidentId + "</b></h4>   <b style='margin: 10px 0;'>Summary:</b> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging : " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Status : " + status + "</b></h5> <b>-----------------------------------------------------------</b></div>";
 
             ticketCount = ticketCount + "<h5><b>" + incidentId + "</b></h5>";
         }
@@ -238,14 +238,14 @@ wsr_utils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-25 07:15:27</sys_created_on>
         <sys_id>1f82ec28db512110cb16b7e8f4961969</sys_id>
-        <sys_mod_count>59</sys_mod_count>
+        <sys_mod_count>62</sys_mod_count>
         <sys_name>wsr_utils</sys_name>
         <sys_package display_value="Global" source="global">global</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_script_include_1f82ec28db512110cb16b7e8f4961969</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-27 09:48:44</sys_updated_on>
+        <sys_updated_on>2023-09-02 19:42:53</sys_updated_on>
     </sys_script_include>
     <sys_claim action="INSERT_OR_UPDATE">
         <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
