@@ -14,6 +14,16 @@
 
     var availableArray = [];
     var notavailableArray = [];
+	
+	var trfTicket = new GlideRecord("u_wsr_table");
+	trfTicket.addEncodedQuery('u_status!=Closed^ORu_status=NULL^u_status!=Resolved^ORu_status=NULL^u_status!=Cancelled^ORu_status=NULL^u_create_date_timeRELATIVELT@dayofweek@ago@1^ORDERBYDESCsys_updated_on');
+	trfTicket.query();
+	while(trfTicket._next()){
+		trfTicket.u_status = "Transferred";
+		trfTicket.u_status_reason= "transferred to other team";
+		trfTicket.update();
+	}
+	
 
     for (var i = 0; i < ticketArray.length; i++) {
         var gr = new GlideRecord("u_wsr_table");
@@ -113,14 +123,14 @@ function getDate(timestamp) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-31 06:11:58</sys_created_on>
         <sys_id>17061fa8978db550e24677d71153af3c</sys_id>
-        <sys_mod_count>36</sys_mod_count>
+        <sys_mod_count>37</sys_mod_count>
         <sys_name>postTickets</sys_name>
         <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ws_operation_17061fa8978db550e24677d71153af3c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-09-02 19:30:41</sys_updated_on>
+        <sys_updated_on>2023-09-03 05:52:50</sys_updated_on>
         <web_service_definition display_value="GetTickets">4ec5db68978db550e24677d71153afb6</web_service_definition>
         <web_service_version display_value="v1">4dda172097cdb550e24677d71153af79</web_service_version>
     </sys_ws_operation>

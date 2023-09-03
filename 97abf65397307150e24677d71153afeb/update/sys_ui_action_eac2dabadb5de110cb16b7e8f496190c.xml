@@ -45,7 +45,7 @@ try {
     for (var i = 0; i < assignees.length; i++) {
         var j = 0;
         var gr = new GlideRecord("u_wsr_table");
-        gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_status=In Progress^ORu_status=Pending^u_assiginee_name=' + assignees[i]);
+        gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_status=In Progress^ORu_status=Pending^u_assiginee_name=' + assignees[i]+'^u_status!=Transferred');
         gr.query();
         while (gr.next()) {
             switch (gr.getValue('u_assiginee_name')) {
@@ -104,7 +104,7 @@ try {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>eac2dabadb5de110cb16b7e8f496190c</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>WSR Export</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -112,7 +112,7 @@ try {
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ui_action_eac2dabadb5de110cb16b7e8f496190c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-27 07:07:54</sys_updated_on>
+        <sys_updated_on>2023-09-03 10:32:10</sys_updated_on>
         <table>u_wsr_table</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
