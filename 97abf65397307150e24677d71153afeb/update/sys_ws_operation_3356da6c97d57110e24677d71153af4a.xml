@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>POST</http_method>
+        <name>WorkOrders</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var reqst = request.body.data;
+    // gs.log("qwertyuiop----------------->>>>" + JSON.stringify(reqst));
+    var ticketArray = reqst.content;
+
+    var availableArray = [];
+    var notavailableArray = [];
+
+    for (var i = 0; i < ticketArray.length; i++) {
+        var accessRequestObject = parseAccessRequest(ticketArray[i].DetailedDescription);
+        var linkObj = {
+            DaaS: {
+                Development: "https://lenovoaudev.service-now.com/",
+                Stage: "https://lenovostage.service-now.com/",
+                Test: "https://lenovoautest.service-now.com/navpage.do",
+                Production: "https://lenovoau.service-now.com/"
+            },
+            EaaS: {
+                Development: "https://lenovoeaasdev.service-now.com/",
+                Stage: "https://lenovoeaasstage.service-now.com/",
+                Test: "https://lenovoeaastest.service-now.com/",
+                Production: "https://lenovoeaas.service-now.com/"
+            },
+            SaaS: {
+                Development: "https://lenovoeaasdev.service-now.com/",
+                Stage: "https://lenovoeaasstage.service-now.com/",
+                Test: "https://lenovoeaastest.service-now.com/",
+                Production: "https://lenovoeaas.service-now.com/"
+            }
+        };
+
+        var subj = ticketArray[i].WorkOrderID + "/" + ticketArray[i].SRID + " Service Now " + accessRequestObject.Businessscenario + " " + accessRequestObject.Environment + " Access Request ";
+
+        var mailBody = subj + "\n\n\n" + "Hi " + accessRequestObject.LenovoAD + "\n Good day!\n\n Please find the credentials for the " + accessRequestObject.Businessscenario + " " + accessRequestObject.Environment + " Access below\nUID - \nPass - Welcome@123\nLink - " + linkObj[accessRequestObject.Businessscenario][accessRequestObject.Environment] + "\n\nPlease let me know if any issues logging in.";
+
+        var gr = new GlideRecord("u_work_orders");
+        gr.addQuery("u_wo_number", ticketArray[i].WorkOrderID);
+        gr.query();
+        gr.setLimit(1);
+        if (gr._next()) {
+            //update
+
+            availableArray.push(ticketArray[i].WorkOrderID);
+            gr.setValue('u_summary', ticketArray[i].DetailedDescription);
+            gr.setValue('u_submitter', ticketArray[i].CustomerITCode);
+            gr.setValue('u_wo_number', ticketArray[i].WorkOrderID);
+            gr.setValue('u_lenovo_ad', accessRequestObject.LenovoAD);
+            gr.setValue('u_replication_email', accessRequestObject.ReplicaterolefromUserEmail);
+            gr.setValue('u_instance', accessRequestObject.Environment);
+            gr.setValue('u_bussiness_scenario', accessRequestObject.Businessscenario);
+            gr.setValue('u_currentrole', accessRequestObject.CurrentRole);
+            gr.setValue('u_email_id', accessRequestObject.Email);
+            gr.setValue('u_purpose_of_account', accessRequestObject.Purposeofaccount);
+            gr.setValue('u_subject', subj);
+            gr.setValue('u_mail_body', mailBody);
+
+            gr.update();
+
+        } else {
+            //create
+            notavailableArray.push(ticketArray[i].WorkOrderID);
+
+            gr.initialize();
+            gr.setValue('u_summary', ticketArray[i].DetailedDescription);
+            gr.setValue('u_submitter', ticketArray[i].CustomerITCode);
+            gr.setValue('u_wo_number', ticketArray[i].WorkOrderID);
+            gr.setValue('u_lenovo_ad', accessRequestObject.LenovoAD);
+            gr.setValue('u_replication_email', accessRequestObject.ReplicaterolefromUserEmail);
+            gr.setValue('u_instance', accessRequestObject.Environment);
+            gr.setValue('u_bussiness_scenario', accessRequestObject.Businessscenario);
+            gr.setValue('u_currentrole', accessRequestObject.CurrentRole);
+            gr.setValue('u_email_id', accessRequestObject.Email);
+            gr.setValue('u_purpose_of_account', accessRequestObject.Purposeofaccount);
+            gr.setValue('u_subject', subj);
+            gr.setValue('u_mail_body', mailBody);
+            var a = gr.insert();
+            gs.log("in Work order ticket------------------> script 1" + ticketArray[i] + a);
+
+        }
+
+    }
+    response.setBody({
+        "Codeword": "vanakam da mapla",
+        "paathukalam": "tha",
+        "arrayLength": ticketArray.length,
+        "notAvailableCount": notavailableArray.length,
+        "availableCount": availableArray.length,
+        "notAvailabeTicket": notavailableArray,
+        "availabeTicket": availableArray,
+    });
+    response.setStatus(201);
+
+
+})(request, response);
+
+
+
+// Function to parse the input string and create an object
+function parseAccessRequest(input) {
+    var accessRequest = {};
+
+    // Split the input by line breaks
+    var lines = input.split('\n');
+
+    // Iterate through each line and extract key-value pairs
+    lines.forEach(function(line) {
+        var temp = line.split(':');
+        var key = temp[0];
+        var cleanKey = key.trim().replace(/[^a-zA-Z0-9]+/g, '');
+        var value = temp[1];
+        if (key && value) {
+            accessRequest[cleanKey] = value.trim();
+        }
+    });
+
+    return accessRequest;
+}]]></operation_script>
+        <operation_uri>/api/821846/gettickets</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-12 11:49:22</sys_created_on>
+        <sys_id>3356da6c97d57110e24677d71153af4a</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>WorkOrders</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_ws_operation_3356da6c97d57110e24677d71153af4a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-12 13:25:27</sys_updated_on>
+        <web_service_definition display_value="GetTickets">4ec5db68978db550e24677d71153afb6</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

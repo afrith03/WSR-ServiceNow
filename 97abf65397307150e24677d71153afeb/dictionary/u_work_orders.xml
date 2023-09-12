@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4004dea897d57110e24677d71153af69" label="Work Orders" max_length="40" name="u_work_orders" type="collection">
+        <element label="Bussiness Scenario" max_length="40" name="u_bussiness_scenario" type="string"/>
+        <element label="CurrentRole" max_length="100" name="u_currentrole" type="string"/>
+        <element label="Email ID" max_length="100" name="u_email_id" type="string"/>
+        <element label="instance" max_length="40" name="u_instance" type="string"/>
+        <element label="Lenovo AD" max_length="40" name="u_lenovo_ad" type="string"/>
+        <element label="mail Body" max_length="1000" name="u_mail_body" type="string"/>
+        <element label="Purpose of account" max_length="100" name="u_purpose_of_account" type="string"/>
+        <element label="replication email" max_length="200" name="u_replication_email" type="string"/>
+        <element label="Status of wo" max_length="40" name="u_status_of_wo" type="string"/>
+        <element label="subject" max_length="180" name="u_subject" type="string"/>
+        <element label="Submitter" max_length="40" name="u_submitter" type="string"/>
+        <element label="summarry" max_length="400" name="u_summary" type="string"/>
+        <element label="WO number" max_length="40" name="u_wo_number" type="string"/>
+    </element>
+</database>
