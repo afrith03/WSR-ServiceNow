@@ -39,9 +39,9 @@
         };
 
         var subj = ticketArray[i].WorkOrderID + "/" + ticketArray[i].SRID + " Service Now " + accessRequestObject.Businessscenario + " " + accessRequestObject.Environment + " Access Request ";
-
-        var mailBody = subj + "\n\n\n" + "Hi " + accessRequestObject.LenovoAD + "\n Good day!\n\n Please find the credentials for the " + accessRequestObject.Businessscenario + " " + accessRequestObject.Environment + " Access below\nUID - \nPass - Welcome@123\nLink - " + linkObj[accessRequestObject.Businessscenario][accessRequestObject.Environment] + "\n\nPlease let me know if any issues logging in.";
-
+        //         gs.log(JSON.stringify(accessRequestObject) + "qwertyuiop");
+        var mailBody = subj + "\n\n\n" + "Hi " + accessRequestObject.LenovoAD + "\nGood day!\n\nPlease find the credentials for the " + accessRequestObject.Businessscenario + " " + accessRequestObject.Environment + " Access below\nUID -" + accessRequestObject.Email + " \nPass - Welcome@123\nLink - " + linkObj[accessRequestObject.Businessscenario][accessRequestObject.Environment] + "\n\nPlease let me know if any issues logging in.";
+//                 var mailBody = "";
         var gr = new GlideRecord("u_work_orders");
         gr.addQuery("u_wo_number", ticketArray[i].WorkOrderID);
         gr.query();
@@ -62,7 +62,9 @@
             gr.setValue('u_purpose_of_account', accessRequestObject.Purposeofaccount);
             gr.setValue('u_subject', subj);
             gr.setValue('u_mail_body', mailBody);
-
+            gr.setValue('u_wo_closed_date', getDate(ticketArray[i].Closed_Date));
+            gr.setValue('u_wo_created_date', getDate(ticketArray[i].Submit_Date));
+            gr.setValue('u_status_of_wo', ticketArray[i].Statusname);
             gr.update();
 
         } else {
@@ -82,6 +84,9 @@
             gr.setValue('u_purpose_of_account', accessRequestObject.Purposeofaccount);
             gr.setValue('u_subject', subj);
             gr.setValue('u_mail_body', mailBody);
+            gr.setValue('u_wo_closed_date', getDate(ticketArray[i].Closed_Date));
+            gr.setValue('u_wo_created_date', getDate(ticketArray[i].Submit_Date));
+            gr.setValue('u_status_of_wo', ticketArray[i].Statusname);
             var a = gr.insert();
             gs.log("in Work order ticket------------------> script 1" + ticketArray[i] + a);
 
@@ -102,7 +107,14 @@
 
 })(request, response);
 
-
+function getDate(timestamp) {
+    var gdt = new GlideDateTime();
+    if (timestamp != null) {
+        gdt.setNumericValue(timestamp);
+        return gdt;
+    }
+    return '';
+}
 
 // Function to parse the input string and create an object
 function parseAccessRequest(input) {
@@ -137,14 +149,14 @@ function parseAccessRequest(input) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-09-12 11:49:22</sys_created_on>
         <sys_id>3356da6c97d57110e24677d71153af4a</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>24</sys_mod_count>
         <sys_name>WorkOrders</sys_name>
         <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ws_operation_3356da6c97d57110e24677d71153af4a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-09-12 13:25:27</sys_updated_on>
+        <sys_updated_on>2023-10-05 11:42:34</sys_updated_on>
         <web_service_definition display_value="GetTickets">4ec5db68978db550e24677d71153afb6</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="a03a874297d53910e24677d71153afb3" sys_domain="global" table="incident" version="3" view="shaik">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>dd5ac78297d53910e24677d71153af0c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>correlation_display</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>515ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>notify</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>d15ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>route_reason</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>555ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>d55ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>task_relations.xml</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>595ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="Task Relations">40bcaf630a0a0aa1001c2747a91ef801</sys_ui_formatter>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>urgency</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>1d5ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:51</sys_created_on>
+            <sys_id>9d5ac78297d53910e24677d71153af0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="incident" sys_domain="global" view="203a874297d53910e24677d71153afab">a03a874297d53910e24677d71153afb3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>incident</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2023-09-17 07:26:16</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a03a874297d53910e24677d71153afb3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>incident</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+            <sys_update_name>sys_ui_section_a03a874297d53910e24677d71153afb3</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2023-09-17 07:26:16</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Shaik" name="shaik">203a874297d53910e24677d71153afab</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -30,17 +30,19 @@
         <name>Daily report Lenovo</name>
         <onclick>getDailyStatus()</onclick>
         <order>100</order>
-        <script><![CDATA[function getDailyStatus(){
-  var tickets = g_list.getChecked();
+        <script><![CDATA[function getDailyStatus() {
+    var tickets = g_list.getChecked();
     var getDailyStatus = new GlideAjax("global.wsr_utils");
     getDailyStatus.addParam('sysparm_name', 'dailyStatus');
     getDailyStatus.addParam('sysparm_dailyTickets', tickets);
     getDailyStatus.getXML(getTicketInfo);
 }
 
-function getTicketInfo(response){
- var answer = response.responseXML.documentElement.getAttribute("answer");
- alert(answer);
+function getTicketInfo(response) {
+    var answer = response.responseXML.documentElement.getAttribute("answer");
+    alert(answer);
+    // var url = "/csm?id=ctv&sysparm_number=67676&sysparm_forecastgroup=ghjkl&sysparm_countrycode=ui";
+    // window.open(url, '_blank');
 }]]></script>
         <show_insert>true</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -52,7 +54,7 @@ function getTicketInfo(response){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6f4c033a97fcbd10e24677d71153af4a</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Daily report Lenovo</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -60,7 +62,7 @@ function getTicketInfo(response){
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ui_action_6f4c033a97fcbd10e24677d71153af4a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-27 07:06:38</sys_updated_on>
+        <sys_updated_on>2023-09-28 07:27:12</sys_updated_on>
         <table>u_wsr_table</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>true</ui16_compatible>

@@ -12,6 +12,8 @@
         <element label="subject" max_length="180" name="u_subject" type="string"/>
         <element label="Submitter" max_length="40" name="u_submitter" type="string"/>
         <element label="summarry" max_length="400" name="u_summary" type="string"/>
+        <element label="Wo Closed date" max_length="40" name="u_wo_closed_date" type="glide_date_time"/>
+        <element label="Wo created date" max_length="40" name="u_wo_created_date" type="glide_date_time"/>
         <element label="WO number" max_length="40" name="u_wo_number" type="string"/>
     </element>
 </database>
