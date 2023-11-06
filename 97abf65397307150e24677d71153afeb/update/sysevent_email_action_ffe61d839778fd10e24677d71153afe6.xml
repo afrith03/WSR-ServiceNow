@@ -36,7 +36,7 @@
         <item_table/>
         <mandatory>false</mandatory>
         <message/>
-        <message_html><![CDATA[<p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Sub: DaaS L1 Shift HOTO - ${mail_script:getcurrentuser} &ndash; ${mail_script:getdatetimevalueAfrith}</span></span></p>
+        <message_html><![CDATA[<p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Sub: DaaS L1 Shift HOTO - Afrith &ndash; ${mail_script:getdatetimevalueAfrith}</span></span></p>
 <p>&nbsp;</p>
 <p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Hi Eswar &amp; Praveen,</span></span></p>
 <p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">I hope this email finds you well. Here's the daily status update for ${mail_script:getdatetimevalueAfrith}: </span></span></p>
@@ -81,7 +81,7 @@
 </table>
 <p>&nbsp;</p>
 <p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><a name="_MailAutoSig"></a><span style="color: black;">Regards,</span></p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><strong><span style="color: #1f497d;"><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000;">${mail_script:getcurrentuser}</span></span></span></strong></p>
+<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><span style="font-size: 16px;"><strong>Afrith Shariff Y2</strong></span></p>
 <p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><strong><span style="font-size: 10.0pt; color: #ed7d31;">L1 Support | SNOW IT</span></strong></p>
 <p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><span style="font-size: 10.0pt; color: #1f497d;">Services Solution Delivery</span></p>
 <p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><strong><span style="font-size: 10.0pt; color: #1f497d;">Email :</span></strong><span style="font-size: 10.0pt; color: #1f497d;"> </span><a href="mailto:ay2@lenovo.com"><span style="font-size: 10.0pt; color: #0563c1;">ay2@lenovo.com</span></a><span style="font-size: 10.0pt; color: #1f497d;"> | <strong>Mob :</strong> +91-9941841699</span></p>]]></message_html>
@@ -106,15 +106,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ffe61d839778fd10e24677d71153afe6</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>Daily status Lenovo</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sysevent_email_action_ffe61d839778fd10e24677d71153afe6</sys_update_name>
-        <sys_updated_by>shanawaz@dyooti.com</sys_updated_by>
-        <sys_updated_on>2023-09-08 11:18:16</sys_updated_on>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-11-06 13:26:51</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>
