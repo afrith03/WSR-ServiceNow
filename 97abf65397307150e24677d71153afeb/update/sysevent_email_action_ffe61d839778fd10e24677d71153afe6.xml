@@ -37,8 +37,12 @@
         <mandatory>false</mandatory>
         <message/>
         <message_html><![CDATA[<p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Sub: DaaS L1 Shift HOTO || General || Afrith &ndash; ${mail_script:getdatetimevalueAfrith}</span></span></p>
-<p>&nbsp;</p>
-<p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">Hi Eswar &amp; Praveen,</span></span></p>
+<div>
+<div>
+<p>abdul.khaliq@dyooti.com;&nbsp; thadishetty.amar@dyooti.com;</p>
+</div>
+<div><span style="font-family: Calibri, sans-serif; white-space-collapse: preserve; font-size: 12pt;">Hi Eswar,</span></div>
+</div>
 <p><span style="font-size: 12pt;"><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">I am reaching out to provide the daily status update of my work on ${mail_script:getdatetimevalueAfrith}: </span></span></p>
 <p><span style="font-size: 12pt;"><strong><span style="font-family: Calibri, sans-serif; color: #000000; white-space-collapse: preserve;">JIRA status </span></strong></span></p>
 <ul style="list-style-position: inside;">
@@ -63,7 +67,7 @@
 </tr>
 <tr style="height: 23.525px;">
 <td style="border-top: none; width: 113pt; padding: 0cm 1px; color: black; vertical-align: middle; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-left: 0.5pt solid windowtext; border-image: initial; background: #ffd966; font-size: 11pt; font-weight: 400; font-style: normal; font-family: Calibri, sans-serif; white-space: nowrap; height: 23.525px;">L2 Lead</td>
-<td style="border-left: none; width: 502pt; vertical-align: middle; border-top: 0.5pt solid windowtext; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; padding-top: 1px; padding-right: 1px; padding-left: 1px; color: black; font-size: 11pt; font-weight: 400; font-style: normal; font-family: Calibri, sans-serif; white-space: nowrap; height: 23.525px;" colspan="6">Eswar Kumar Palla, Praveen B1</td>
+<td style="border-left: none; width: 502pt; vertical-align: middle; border-top: 0.5pt solid windowtext; border-right: 0.5pt solid windowtext; border-bottom: 0.5pt solid windowtext; border-image: initial; padding-top: 1px; padding-right: 1px; padding-left: 1px; color: black; font-size: 11pt; font-weight: 400; font-style: normal; font-family: Calibri, sans-serif; white-space: nowrap; height: 23.525px;" colspan="6">Eswar Kumar Palla</td>
 </tr>
 <tr style="height: 50px;">
 <td style="width: 179pt; padding: 0cm 1px; color: black; text-align: center; vertical-align: middle; border: 0.5pt solid windowtext; background: #f8cbad; font-size: 11pt; font-weight: 400; font-style: normal; font-family: Calibri, sans-serif; white-space: nowrap; height: 50px;" colspan="2">New Tickets worked in particular shift&nbsp;</td>
@@ -79,12 +83,7 @@
 </tr>
 </tbody>
 </table>
-<p>&nbsp;</p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><a name="_MailAutoSig"></a><span style="color: black;">Regards,</span></p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><span style="font-size: 16px;"><strong>Afrith Shariff Y2</strong></span></p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><strong><span style="font-size: 10.0pt; color: #ed7d31;">L1 Support | SNOW IT</span></strong></p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><span style="font-size: 10.0pt; color: #1f497d;">Services Solution Delivery</span></p>
-<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;"><strong><span style="font-size: 10.0pt; color: #1f497d;">Email :</span></strong><span style="font-size: 10.0pt; color: #1f497d;"> </span><a href="mailto:ay2@lenovo.com"><span style="font-size: 10.0pt; color: #0563c1;">ay2@lenovo.com</span></a><span style="font-size: 10.0pt; color: #1f497d;"> | <strong>Mob :</strong> +91-9941841699</span></p>]]></message_html>
+<p style="margin: 0cm 0cm 0.0001pt; font-size: 11pt; font-family: Calibri, sans-serif;">&nbsp;</p>]]></message_html>
         <message_list/>
         <message_text/>
         <name>Daily status Lenovo</name>
@@ -106,7 +105,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ffe61d839778fd10e24677d71153afe6</sys_id>
-        <sys_mod_count>17</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Daily status Lenovo</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global" source="global">global</sys_package>
@@ -114,7 +113,7 @@
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sysevent_email_action_ffe61d839778fd10e24677d71153afe6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-11-09 13:52:47</sys_updated_on>
+        <sys_updated_on>2023-12-22 12:45:26</sys_updated_on>
         <sys_version>2</sys_version>
         <template/>
         <type>email</type>
