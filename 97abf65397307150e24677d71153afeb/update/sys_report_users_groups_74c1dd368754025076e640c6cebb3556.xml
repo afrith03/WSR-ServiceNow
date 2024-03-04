@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Team Utilization Productivity Today">fcc195368754025076e640c6cebb3501</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>shanawaz.sk@dyooti.com</sys_created_by>
+        <sys_created_on>2024-02-15 09:43:54</sys_created_on>
+        <sys_id>74c1dd368754025076e640c6cebb3556</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>fcc195368754025076e640c6cebb3501</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_report_users_groups_74c1dd368754025076e640c6cebb3556</sys_update_name>
+        <sys_updated_by>shanawaz.sk@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-02-15 09:43:54</sys_updated_on>
+        <user_id display_value="Shanawaz S K">572d30ba87d0025076e640c6cebb3556</user_id>
+    </sys_report_users_groups>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>test</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>shanawaz.sk@dyooti.com</sys_created_by>
+        <sys_created_on>2024-02-28 09:51:51</sys_created_on>
+        <sys_id>dc40d4431b284a10ee97fc4f034bcb81</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>test</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_ui_view_dc40d4431b284a10ee97fc4f034bcb81</sys_update_name>
+        <sys_updated_by>shanawaz.sk@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-02-28 09:51:51</sys_updated_on>
+        <title>test</title>
+        <user/>
+    </sys_ui_view>
+</record_update>
