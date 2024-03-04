@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs">
+    <pa_m2m_dashboard_tabs action="DELETE">
+        <dashboard display_value="Work effort">ebb5c5e68750ce1076e640c6cebb3585</dashboard>
+        <home>false</home>
+        <homepage/>
+        <order>2</order>
+        <sys_class_name>pa_m2m_dashboard_tabs</sys_class_name>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 11:30:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>53b6d6648770421076e640c6cebb354a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ebb5c5e68750ce1076e640c6cebb3585</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>pa_m2m_dashboard_tabs_53b6d6648770421076e640c6cebb354a</sys_update_name>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 11:30:20</sys_updated_on>
+        <tab display_value="Work effort - New Tab 2">9fb6d6648770421076e640c6cebb3546</tab>
+    </pa_m2m_dashboard_tabs>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>0139495bdb7e7518b1eb9027c596193e</instance_id>
+        <instance_name>dyootidemo2</instance_name>
+        <name>pa_m2m_dashboard_tabs_53b6d6648770421076e640c6cebb354a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_m2m_dashboard_tabs"><pa_m2m_dashboard_tabs action="INSERT_OR_UPDATE"><dashboard display_value="Work effort">ebb5c5e68750ce1076e640c6cebb3585</dashboard><home>false</home><homepage/><order>2</order><sys_class_name>pa_m2m_dashboard_tabs</sys_class_name><sys_created_by>akbar.s@dyooti.com</sys_created_by><sys_created_on>2024-03-04 11:30:20</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>53b6d6648770421076e640c6cebb354a</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ebb5c5e68750ce1076e640c6cebb3585</sys_name><sys_overrides/><sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package><sys_policy/><sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope><sys_update_name>pa_m2m_dashboard_tabs_53b6d6648770421076e640c6cebb354a</sys_update_name><sys_updated_by>akbar.s@dyooti.com</sys_updated_by><sys_updated_on>2024-03-04 11:30:20</sys_updated_on><tab display_value="Work effort - New Tab 2">9fb6d6648770421076e640c6cebb3546</tab></pa_m2m_dashboard_tabs></record_update>]]></payload>
+        <payload_hash>-2119149659</payload_hash>
+        <record_name>ebb5c5e68750ce1076e640c6cebb3585</record_name>
+        <reverted_from/>
+        <source>0e16c66c87fc021076e640c6cebb358f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 11:30:20</sys_created_on>
+        <sys_id>5fb6d6648770421076e640c6cebb354c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18e093a9e650000001</sys_recorded_at>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 11:30:20</sys_updated_on>
+        <type>Dashboard Tab</type>
+        <update_guid>93b6d664b07042107546ada60ad6214c</update_guid>
+        <update_guid_history>93b6d664b07042107546ada60ad6214c:-2119149659</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Work effort">22871aa48770421076e640c6cebb3536</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 11:33:49</sys_created_on>
+        <sys_db_object display_value="" name="pa_m2m_dashboard_tabs">pa_m2m_dashboard_tabs</sys_db_object>
+        <sys_id>1d9a9d78db834a308a0b8c55d94de890</sys_id>
+        <sys_metadata>53b6d6648770421076e640c6cebb354a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ebb5c5e68750ce1076e640c6cebb3585</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_parent display_value="Work effort">ebb5c5e68750ce1076e640c6cebb3585</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>pa_m2m_dashboard_tabs_53b6d6648770421076e640c6cebb354a</sys_update_name>
+        <sys_update_version display_value="pa_m2m_dashboard_tabs_53b6d6648770421076e640c6cebb354a">5fb6d6648770421076e640c6cebb354c</sys_update_version>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 11:33:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

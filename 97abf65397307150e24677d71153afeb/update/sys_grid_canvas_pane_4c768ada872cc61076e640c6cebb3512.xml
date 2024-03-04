@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+        <grid_canvas display_value="PA Work effort - New Tab">3bc549e68750ce1076e640c6cebb3512</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 2024-02-26 02:32:46">7f668ada872cc61076e640c6cebb3509</portal_widget>
+        <posx>0</posx>
+        <posy>16</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>afrith.s</sys_created_by>
+        <sys_created_on>2024-02-26 10:32:46</sys_created_on>
+        <sys_id>4c768ada872cc61076e640c6cebb3512</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>3bc549e68750ce1076e640c6cebb3512</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_4c768ada872cc61076e640c6cebb3512</sys_update_name>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 11:32:02</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+</record_update>

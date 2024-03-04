@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard">
+    <par_dashboard action="DELETE">
+        <active>true</active>
+        <certified>false</certified>
+        <description>This dashboard contains the statistics of the WSR - Support Team</description>
+        <experience/>
+        <grid>48</grid>
+        <name>WSR Stats</name>
+        <sys_class_name>par_dashboard</sys_class_name>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 12:41:22</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7ff662a887b0421076e640c6cebb358f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>WSR Stats</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>par_dashboard_7ff662a887b0421076e640c6cebb358f</sys_update_name>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 12:41:22</sys_updated_on>
+        <sys_ux_app_config/>
+        <sys_ux_app_route/>
+        <sys_ux_macroponent/>
+        <sys_ux_screen/>
+        <sys_ux_screen_type/>
+    </par_dashboard>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>0139495bdb7e7518b1eb9027c596193e</instance_id>
+        <instance_name>dyootidemo2</instance_name>
+        <name>par_dashboard_7ff662a887b0421076e640c6cebb358f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard"><par_dashboard action="INSERT_OR_UPDATE"><active>true</active><certified>false</certified><description>This dashboard contains the statistics of the WSR - Support Team</description><experience/><grid>48</grid><name>WSR Stats</name><sys_class_name>par_dashboard</sys_class_name><sys_created_by>akbar.s@dyooti.com</sys_created_by><sys_created_on>2024-03-04 12:41:22</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>7ff662a887b0421076e640c6cebb358f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>WSR Stats</sys_name><sys_overrides/><sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package><sys_policy/><sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope><sys_update_name>par_dashboard_7ff662a887b0421076e640c6cebb358f</sys_update_name><sys_updated_by>akbar.s@dyooti.com</sys_updated_by><sys_updated_on>2024-03-04 12:41:22</sys_updated_on><sys_ux_app_config/><sys_ux_app_route/><sys_ux_macroponent/><sys_ux_screen/><sys_ux_screen_type/></par_dashboard></record_update>]]></payload>
+        <payload_hash>-1908321626</payload_hash>
+        <record_name>WSR Stats</record_name>
+        <reverted_from/>
+        <source>0e16c66c87fc021076e640c6cebb358f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 12:41:22</sys_created_on>
+        <sys_id>bff662a887b0421076e640c6cebb3591</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18e097ba64d0000001</sys_recorded_at>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 12:41:22</sys_updated_on>
+        <type>PAR Dashboard</type>
+        <update_guid>f3f662a80cb04210cce5aec0d34b5a91</update_guid>
+        <update_guid_history>f3f662a80cb04210cce5aec0d34b5a91:-1908321626</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="WSR Stats">941736ac87f0421076e640c6cebb35c8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>akbar.s@dyooti.com</sys_created_by>
+        <sys_created_on>2024-03-04 13:51:34</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard">par_dashboard</sys_db_object>
+        <sys_id>7d28fc0dcf6745468b0013bd8fba3924</sys_id>
+        <sys_metadata>7ff662a887b0421076e640c6cebb358f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>WSR Stats</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>par_dashboard_7ff662a887b0421076e640c6cebb358f</sys_update_name>
+        <sys_update_version display_value="par_dashboard_7ff662a887b0421076e640c6cebb358f">bff662a887b0421076e640c6cebb3591</sys_update_version>
+        <sys_updated_by>akbar.s@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-03-04 13:51:34</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
