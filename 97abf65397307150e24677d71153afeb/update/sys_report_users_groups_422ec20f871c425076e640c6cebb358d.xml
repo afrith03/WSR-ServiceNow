@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Work Effort - Lenovo Support">c22ec20f871c425076e640c6cebb358c</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>surendar.m@dyooti.com</sys_created_by>
+        <sys_created_on>2024-02-16 08:46:15</sys_created_on>
+        <sys_id>422ec20f871c425076e640c6cebb358d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c22ec20f871c425076e640c6cebb358c</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_report_users_groups_422ec20f871c425076e640c6cebb358d</sys_update_name>
+        <sys_updated_by>surendar.m@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-02-16 08:46:15</sys_updated_on>
+        <user_id display_value="Surendar M">297db4ba87d0025076e640c6cebb3586</user_id>
+    </sys_report_users_groups>
+</record_update>

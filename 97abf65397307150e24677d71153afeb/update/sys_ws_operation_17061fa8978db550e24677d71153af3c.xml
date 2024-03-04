@@ -8,107 +8,114 @@
         <http_method>POST</http_method>
         <name>postTickets</name>
         <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-    var reqst = request.body.data;
-    // gs.log("qwertyuiop----------------->>>>" + JSON.stringify(reqst));
-    var ticketArray = reqst.content;
+	var reqst = request.body.data;
+	// gs.log("qwertyuiop----------------->>>>" + JSON.stringify(reqst));
+	var ticketArray = reqst.content;
 
-    var availableArray = [];
-    var notavailableArray = [];
-	
+	var availableArray = [];
+	var notavailableArray = [];
+	var assigneList = ['ay2', 'mr11', 'mkhaliq', 'sshanawaz', 'msangeetha1', 'apandi', 'iakumalla', 'epalla'];
+
 	var trfTicket = new GlideRecord("u_wsr_table");
 	trfTicket.addEncodedQuery('u_status!=Closed^ORu_status=NULL^u_status!=Resolved^ORu_status=NULL^u_status!=Cancelled^ORu_status=NULL^u_create_date_timeRELATIVELT@dayofweek@ago@1^ORDERBYDESCsys_updated_on');
 	trfTicket.query();
-	while(trfTicket._next()){
+	while (trfTicket._next()) {
 		trfTicket.u_status = "Transferred";
-		trfTicket.u_status_reason= "transferred to other team";
+		trfTicket.u_status_reason = "transferred to other team";
 		trfTicket.update();
 	}
-	
-
-    for (var i = 0; i < ticketArray.length; i++) {
-        var gr = new GlideRecord("u_wsr_table");
-        gr.addQuery("u_incident_id", ticketArray[i].Incident_Number);
-        gr.query();
-        gr.setLimit(1);
-        if (gr._next()) {
-            //update
-            availableArray.push(ticketArray[i].Incident_Number);
-            gr.setValue('u_assignee', ticketArray[i].Assignee_Login_ID);
-            gr.setValue('u_business_categorization3', ticketArray[i].BusinessCategorization3);
-            gr.setValue('u_customer_id', ticketArray[i].CustomerLoginID);
-            gr.setValue('u_incident_id', ticketArray[i].Incident_Number);
-            gr.setValue('u_incident_type', ticketArray[i].IncidentType);
-            gr.setValue('u_notes', ticketArray[i].Detailed_Decription);
-            gr.setValue('u_oc_t3', ticketArray[i].Categorization_Tier_3);
-            gr.setValue('u_priority', ticketArray[i].Priority);
-            gr.setValue('u_resolution', ticketArray[i].Resolution.replace(/\n/gi, "<br>"));
-            gr.setValue('u_status', ticketArray[i].Status);
-            gr.setValue('u_status_reason', ticketArray[i].Status_Reason);
-            gr.setValue('u_summary', ticketArray[i].Description.replace(/\n/gi, "<br>"));
-            gr.setValue('u_create_date', getDate(ticketArray[i].sysCreateTime));
-            gr.setValue('u_create_date_time', getDate(ticketArray[i].sysCreateTime));
-            gr.setValue('u_closed_date', getDate(ticketArray[i].Closed_Date));
-            gr.setValue('u_last_modified_date', getDate(ticketArray[i].Last_Modified_Date));
-            gr.setValue('u_last_modified_date_time', getDate(ticketArray[i].Last_Modified_Date));
-            gr.setValue('u_resolve_date', getDate(ticketArray[i].Resolved_Date));
-            gr.setValue('u_resolve_date_time', getDate(ticketArray[i].Resolved_Date));
-            gr.update();
-
-        } else {
-            //create
-            notavailableArray.push(ticketArray[i].Incident_Number);
-            gr.initialize();
-            gr.setValue('u_assignee', ticketArray[i].Assignee_Login_ID);
-            gr.setValue('u_business_categorization3', ticketArray[i].BusinessCategorization3);
-            gr.setValue('u_customer_id', ticketArray[i].CustomerLoginID);
-            gr.setValue('u_incident_id', ticketArray[i].Incident_Number);
-            gr.setValue('u_incident_type', ticketArray[i].IncidentType);
-            gr.setValue('u_notes', ticketArray[i].Detailed_Decription);
-            gr.setValue('u_oc_t3', ticketArray[i].Categorization_Tier_3);
-            gr.setValue('u_priority', ticketArray[i].Priority);
-            gr.setValue('u_resolution', ticketArray[i].Resolution.replace(/\n/gi, "<br>"));
-            gr.setValue('u_status', ticketArray[i].Status);
-            gr.setValue('u_status_reason', ticketArray[i].Status_Reason);
-            gr.setValue('u_summary', ticketArray[i].Description.replace(/\n/gi, "<br>"));
-            gr.setValue('u_create_date', getDate(ticketArray[i].sysCreateTime));
-            gr.setValue('u_create_date_time', getDate(ticketArray[i].sysCreateTime));
-            gr.setValue('u_closed_date', getDate(ticketArray[i].Closed_Date));
-            gr.setValue('u_last_modified_date', getDate(ticketArray[i].Last_Modified_Date));
-            gr.setValue('u_last_modified_date_time', getDate(ticketArray[i].Last_Modified_Date));
-            gr.setValue('u_resolve_date', getDate(ticketArray[i].Resolved_Date));
-            gr.setValue('u_resolve_date_time', getDate(ticketArray[i].Resolved_Date));
-            var a = gr.insert();
-            gs.log("in ticket------------------> script 1" + ticketArray[i] + a);
-
-        }
-
-    }
-
-    //gs.eventQueue('event.name', GlideRecord, parm1, parm2); // standard form
-    //     gs.eventQueue("process.inbound.tickets", '', ticketArray, "tickets------------->");
 
 
-    response.setBody({
-        "Codeword": "vanakam da mapla",
-        "paathukalam": "tha",
-        "arrayLength": ticketArray.length,
-        "notAvailableCount": notavailableArray.length,
-        "availableCount": availableArray.length,
-        "notAvailabeTicket": notavailableArray,
-        "availabeTicket": availableArray,
-    });
-    response.setStatus(201);
+	for (var i = 0; i < ticketArray.length; i++) {
+		var transfered = false;
+		if (assigneList.indexOf(ticketArray[i].Assignee_Login_ID) == -1) {
+			transfered = true;
+		}
+		var gr = new GlideRecord("u_wsr_table");
+		gr.addQuery("u_incident_id", ticketArray[i].Incident_Number);
+		gr.query();
+		gr.setLimit(1);
+		if (gr._next()) {
+			//update
+			availableArray.push(ticketArray[i].Incident_Number);
+			gr.setValue('u_assignee', ticketArray[i].Assignee_Login_ID);
+			gr.setValue('u_business_categorization3', ticketArray[i].BusinessCategorization3);
+			gr.setValue('u_customer_id', ticketArray[i].CustomerLoginID);
+			gr.setValue('u_incident_id', ticketArray[i].Incident_Number);
+			gr.setValue('u_incident_type', ticketArray[i].IncidentType);
+			gr.setValue('u_notes', ticketArray[i].Detailed_Decription);
+			gr.setValue('u_oc_t3', ticketArray[i].Categorization_Tier_3);
+			gr.setValue('u_priority', ticketArray[i].Priority);
+			gr.setValue('u_resolution', ticketArray[i].Resolution.replace(/\n/gi, "<br>"));
+			var status = transfered ? "Transferred" : ticketArray[i].Status;
+			gr.setValue('u_status', status);
+			gr.setValue('u_status_reason', ticketArray[i].Status_Reason);
+			gr.setValue('u_summary', ticketArray[i].Description.replace(/\n/gi, "<br>"));
+			gr.setValue('u_create_date', getDate(ticketArray[i].sysCreateTime));
+			gr.setValue('u_create_date_time', getDate(ticketArray[i].sysCreateTime));
+			gr.setValue('u_closed_date', getDate(ticketArray[i].Closed_Date));
+			gr.setValue('u_last_modified_date', getDate(ticketArray[i].Last_Modified_Date));
+			gr.setValue('u_last_modified_date_time', getDate(ticketArray[i].Last_Modified_Date));
+			gr.setValue('u_resolve_date', getDate(ticketArray[i].Resolved_Date));
+			gr.setValue('u_resolve_date_time', getDate(ticketArray[i].Resolved_Date));
+			gr.update();
+
+		} else {
+			//create
+			notavailableArray.push(ticketArray[i].Incident_Number);
+			gr.initialize();
+			gr.setValue('u_assignee', ticketArray[i].Assignee_Login_ID);
+			gr.setValue('u_business_categorization3', ticketArray[i].BusinessCategorization3);
+			gr.setValue('u_customer_id', ticketArray[i].CustomerLoginID);
+			gr.setValue('u_incident_id', ticketArray[i].Incident_Number);
+			gr.setValue('u_incident_type', ticketArray[i].IncidentType);
+			gr.setValue('u_notes', ticketArray[i].Detailed_Decription);
+			gr.setValue('u_oc_t3', ticketArray[i].Categorization_Tier_3);
+			gr.setValue('u_priority', ticketArray[i].Priority);
+			gr.setValue('u_resolution', ticketArray[i].Resolution.replace(/\n/gi, "<br>"));
+			var status = transfered ? "Transferred" : ticketArray[i].Status;
+			gr.setValue('u_status', status);
+			gr.setValue('u_status_reason', ticketArray[i].Status_Reason);
+			gr.setValue('u_summary', ticketArray[i].Description.replace(/\n/gi, "<br>"));
+			gr.setValue('u_create_date', getDate(ticketArray[i].sysCreateTime));
+			gr.setValue('u_create_date_time', getDate(ticketArray[i].sysCreateTime));
+			gr.setValue('u_closed_date', getDate(ticketArray[i].Closed_Date));
+			gr.setValue('u_last_modified_date', getDate(ticketArray[i].Last_Modified_Date));
+			gr.setValue('u_last_modified_date_time', getDate(ticketArray[i].Last_Modified_Date));
+			gr.setValue('u_resolve_date', getDate(ticketArray[i].Resolved_Date));
+			gr.setValue('u_resolve_date_time', getDate(ticketArray[i].Resolved_Date));
+			var a = gr.insert();
+			gs.log("in ticket------------------> script 1" + ticketArray[i] + a);
+
+		}
+
+	}
+
+	//gs.eventQueue('event.name', GlideRecord, parm1, parm2); // standard form
+	//     gs.eventQueue("process.inbound.tickets", '', ticketArray, "tickets------------->");
+
+
+	response.setBody({
+		"Codeword": "vanakam da mapla",
+		"paathukalam": "tha",
+		"arrayLength": ticketArray.length,
+		"notAvailableCount": notavailableArray.length,
+		"availableCount": availableArray.length,
+		"notAvailabeTicket": notavailableArray,
+		"availabeTicket": availableArray,
+	});
+	response.setStatus(201);
 
 
 })(request, response);
 // Convert date form milliseconds
 function getDate(timestamp) {
-    var gdt = new GlideDateTime();
-    if (timestamp != null) {
-        gdt.setNumericValue(timestamp);
-        return gdt;
-    }
-    return '';
+	var gdt = new GlideDateTime();
+	if (timestamp != null) {
+		gdt.setNumericValue(timestamp);
+		return gdt;
+	}
+	return '';
 }]]></operation_script>
         <operation_uri>/api/821846/v1/gettickets</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
@@ -123,14 +130,14 @@ function getDate(timestamp) {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-31 06:11:58</sys_created_on>
         <sys_id>17061fa8978db550e24677d71153af3c</sys_id>
-        <sys_mod_count>37</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>postTickets</sys_name>
         <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_ws_operation_17061fa8978db550e24677d71153af3c</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-09-03 05:52:50</sys_updated_on>
+        <sys_updated_by>afrith.s</sys_updated_by>
+        <sys_updated_on>2024-02-23 14:13:04</sys_updated_on>
         <web_service_definition display_value="GetTickets">4ec5db68978db550e24677d71153afb6</web_service_definition>
         <web_service_version display_value="v1">4dda172097cdb550e24677d71153af79</web_service_version>
     </sys_ws_operation>
