@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="DELETE">
+        <grid_canvas display_value="PA Work effort - New Tab">3bc549e68750ce1076e640c6cebb3512</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 2024-02-14 08:57:33">136bade28714ce1076e640c6cebb35aa</portal_widget>
+        <posx>0</posx>
+        <posy>0</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>afrith.s</sys_created_by>
+        <sys_created_on>2024-02-14 16:57:33</sys_created_on>
+        <sys_id>9f6b61268714ce1076e640c6cebb35b9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3bc549e68750ce1076e640c6cebb3512</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_9f6b61268714ce1076e640c6cebb35b9</sys_update_name>
+        <sys_updated_by>afrith.s</sys_updated_by>
+        <sys_updated_on>2024-02-14 16:57:33</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="WSR">97abf65397307150e24677d71153afeb</application>
+        <file_path/>
+        <instance_id>0139495bdb7e7518b1eb9027c596193e</instance_id>
+        <instance_name>dyootidemo2</instance_name>
+        <name>sys_grid_canvas_pane_9f6b61268714ce1076e640c6cebb35b9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane"><sys_grid_canvas_pane action="INSERT_OR_UPDATE"><grid_canvas display_value="PA Work effort - New Tab">3bc549e68750ce1076e640c6cebb3512</grid_canvas><height>10</height><portal_widget display_value="Created 2024-02-14 08:57:33">136bade28714ce1076e640c6cebb35aa</portal_widget><posx>0</posx><posy>0</posy><sys_class_name>sys_grid_canvas_pane</sys_class_name><sys_created_by>afrith.s</sys_created_by><sys_created_on>2024-02-14 16:57:33</sys_created_on><sys_id>9f6b61268714ce1076e640c6cebb35b9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>3bc549e68750ce1076e640c6cebb3512</sys_name><sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package><sys_policy/><sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope><sys_update_name>sys_grid_canvas_pane_9f6b61268714ce1076e640c6cebb35b9</sys_update_name><sys_updated_by>afrith.s</sys_updated_by><sys_updated_on>2024-02-14 16:57:33</sys_updated_on><width>12</width></sys_grid_canvas_pane></record_update>]]></payload>
+        <payload_hash>-748147477</payload_hash>
+        <record_name>3bc549e68750ce1076e640c6cebb3512</record_name>
+        <reverted_from/>
+        <source>cc7489668750ce1076e640c6cebb35b9</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>afrith.s</sys_created_by>
+        <sys_created_on>2024-02-14 16:57:33</sys_created_on>
+        <sys_id>2b6b61268714ce1076e640c6cebb35bc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18da88d5f6e0000001</sys_recorded_at>
+        <sys_updated_by>afrith.s</sys_updated_by>
+        <sys_updated_on>2024-02-14 16:57:33</sys_updated_on>
+        <type>Grid Canvas Pane</type>
+        <update_guid>6f6b6126a914ce10f3aac3c1dee7e0bb</update_guid>
+        <update_guid_history>6f6b6126a914ce10f3aac3c1dee7e0bb:-748147477</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>afrith.s</sys_created_by>
+        <sys_created_on>2024-02-14 16:58:40</sys_created_on>
+        <sys_db_object display_value="" name="sys_grid_canvas_pane">sys_grid_canvas_pane</sys_db_object>
+        <sys_id>227312208cb04bb09c14db9495d7ca90</sys_id>
+        <sys_metadata>9f6b61268714ce1076e640c6cebb35b9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>3bc549e68750ce1076e640c6cebb3512</sys_name>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_scope_delete display_value="">00bc4cb468804508808dd810203f9840</sys_scope_delete>
+        <sys_update_name>sys_grid_canvas_pane_9f6b61268714ce1076e640c6cebb35b9</sys_update_name>
+        <sys_update_version display_value="sys_grid_canvas_pane_9f6b61268714ce1076e640c6cebb35b9">2b6b61268714ce1076e640c6cebb35bc</sys_update_version>
+        <sys_updated_by>afrith.s</sys_updated_by>
+        <sys_updated_on>2024-02-14 16:58:40</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

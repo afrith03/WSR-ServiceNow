@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs">
+    <pa_tabs action="INSERT_OR_UPDATE">
+        <canvas_page display_value="PA Work effort - New Tab">3bc549e68750ce1076e640c6cebb3512</canvas_page>
+        <name>Work effort - New Tab</name>
+        <page display_value="PA Work effort - New Tab">bfc549e68750ce1076e640c6cebb3510</page>
+        <sys_class_name>pa_tabs</sys_class_name>
+        <sys_created_by>afrith.s</sys_created_by>
+        <sys_created_on>2024-02-14 14:13:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f7c549e68750ce1076e640c6cebb3515</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Work effort - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
+        <sys_update_name>pa_tabs_f7c549e68750ce1076e640c6cebb3515</sys_update_name>
+        <sys_updated_by>afrith.s</sys_updated_by>
+        <sys_updated_on>2024-02-14 14:13:11</sys_updated_on>
+    </pa_tabs>
+</record_update>

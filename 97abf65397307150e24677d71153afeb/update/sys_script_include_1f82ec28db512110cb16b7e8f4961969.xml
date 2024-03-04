@@ -10,263 +10,379 @@
         <script><![CDATA[var wsr_utils = Class.create();
 wsr_utils.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
-    'getStatus': function() {
-        try {
-            var resObj = {};
-            var sysIdList = this.getParameter('sysparm_sysIdList');
-            var gr = new GlideRecord('u_wsr_table');
-            gr.addEncodedQuery('sys_idIN' + sysIdList);
-            gr.query();
-            var count = gr.getRowCount();
-            resObj.totalCount = count;
-            resObj.incidents = 0;
-            resObj.extraService = 0;
-            resObj.enquiry = 0;
-            resObj.unknownType = 0;
-            resObj.resolved = 0;
-            resObj.internalApproval = 0;
-            resObj.onHold = 0;
-            resObj.userToValidate = 0;
-            resObj.internalDependency = 0;
-            resObj.userToTakeAction = 0;
-            resObj.additionalInfoNeededFromUser = 0;
-            resObj.monitoring = 0;
-            resObj.thirdParty = 0;
-            resObj.inProgress = 0;
-            resObj.unknown = 0;
-            while (gr.next()) {
-                switch (gr.u_incident_type.toString()) {
-                    case 'Extra Service':
-                        resObj.extraService += 1;
-                        break;
-                    case 'Incident':
-                        resObj.incidents += 1;
-                        break;
-                    case 'Inquiry':
-                        resObj.enquiry += 1;
-                        break;
-                    default:
-                        resObj.unknownType += 1;
-                }
-                if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
-                    resObj.resolved += 1;
-                } else {
-                    if (!gr.u_status_reason.toString() && gr.u_status.toString() == 'In Progress') {
-                        resObj.inProgress += 1;
-                    } else {
-                        switch (gr.u_status_reason.toString()) {
-                            case 'Waiting for internal approval':
-                                resObj.internalApproval += 1;
-                                break;
-                            case 'Hold Ticket per Users Request':
-                                resObj.onHold += 1;
-                                break;
-                            case 'Waiting for User to Validate':
-                                resObj.userToValidate += 1;
-                                break;
-                            case 'Internal Dependency':
-                                resObj.internalDependency += 1;
-                                break;
-                            case 'Waiting for User to Take Action':
-                                resObj.userToTakeAction += 1;
-                                break;
-                            case 'Additional Info Needed From User':
-                                resObj.additionalInfoNeededFromUser += 1;
-                                break;
-                            case 'Monitoring':
-                                resObj.monitoring += 1;
-                                break;
-                            case 'Waiting for 3rd party vendor to take act':
-                                resObj.thirdParty += 1;
-                                break;
-                            default:
-                                gs.log("hellow unknown" + gr.u_incident_id);
-                                resObj.unknown += 1;
-                        }
-                    }
-                }
-            }
-            var statusObj = JSON.stringify(resObj);
-            gs.log("hellow unknown" + statusObj);
-            return statusObj;
-        } catch (error) {
-            gs.log("error is " + error);
-        }
-    },
-    'getStatusUserwise': function() {
-        try {
-            var resObj = {};
-            // var sysIdList = this.getParameter('sysparm_sysIdList');
-            var gr = new GlideRecord('u_wsr_table');
-            gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^u_assiginee_name!=Others^ORu_assiginee_name=NULL');
-            gr.query();
-            var count = gr.getRowCount();
-            resObj.totalCount = count;
-            resObj.incidents = 0;
-            resObj.extraService = 0;
-            resObj.enquiry = 0;
-            resObj.unknownType = 0;
-            resObj.resolved = 0;
-            resObj.internalApproval = 0;
-            resObj.onHold = 0;
-            resObj.userToValidate = 0;
-            resObj.internalDependency = 0;
-            resObj.userToTakeAction = 0;
-            resObj.additionalInfoNeededFromUser = 0;
-            resObj.monitoring = 0;
-            resObj.thirdParty = 0;
-            resObj.unknown = 0;
-            while (gr.next()) {
-                switch (gr.u_incident_type.toString()) {
-                    case 'Extra Service':
-                        resObj.extraService += 1;
-                        break;
-                    case 'Incident':
-                        resObj.incidents += 1;
-                        break;
-                    case 'Inquiry':
-                        resObj.enquiry += 1;
-                        break;
-                    default:
-                        resObj.unknownType += 1;
-                }
-                if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
-                    resObj.resolved += 1;
-                } else {
-                    switch (gr.u_status_reason.toString()) {
-                        case 'Waiting for internal approval':
-                            resObj.internalApproval += 1;
-                            break;
-                        case 'Hold Ticket per Users Request':
-                            resObj.onHold += 1;
-                            break;
-                        case 'Waiting for User to Validate':
-                            resObj.userToValidate += 1;
-                            break;
-                        case 'Internal Dependency':
-                            resObj.internalDependency += 1;
-                            break;
-                        case 'Waiting for User to Take Action':
-                            resObj.userToTakeAction += 1;
-                            break;
-                        case 'Additional Info Needed From User':
-                            resObj.additionalInfoNeededFromUser += 1;
-                            break;
-                        case 'Monitoring':
-                            resObj.monitoring += 1;
-                            break;
-                        case 'Waiting for 3rd party vendor to take act':
-                            resObj.thirdParty += 1;
-                            break;
-                        default:
-                            resObj.unknown += 1;
-                    }
-                }
-            }
-            return JSON.stringify(resObj);
-        } catch (error) {
-            gs.log("error is " + error);
-        }
-    },
-    //Afrith Individual data
-    'individualReportWSR': function() {
-        // sysparm_wsrData
-        var wsrInfo = this.getParameter('sysparm_wsrData');
-        var gr = new GlideRecord("u_wsr_table");
-        gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_status=In Progress^ORu_status=Pending^u_assiginee_name!=Others^u_status!=Transferred');
-        gr.query();
-        var total = gr.getRowCount();
+	'getStatus': function () {
+		try {
+			var resObj = {};
+			var sysIdList = this.getParameter('sysparm_sysIdList');
+			var gr = new GlideRecord('u_wsr_table');
+			gr.addEncodedQuery('sys_idIN' + sysIdList);
+			gr.query();
+			var count = gr.getRowCount();
+			resObj.totalCount = count;
+			resObj.incidents = 0;
+			resObj.extraService = 0;
+			resObj.enquiry = 0;
+			resObj.unknownType = 0;
+			resObj.resolved = 0;
+			resObj.internalApproval = 0;
+			resObj.onHold = 0;
+			resObj.userToValidate = 0;
+			resObj.internalDependency = 0;
+			resObj.userToTakeAction = 0;
+			resObj.additionalInfoNeededFromUser = 0;
+			resObj.monitoring = 0;
+			resObj.thirdParty = 0;
+			resObj.inProgress = 0;
+			resObj.unknown = 0;
+			while (gr.next()) {
+				switch (gr.u_incident_type.toString()) {
+					case 'Extra Service':
+						resObj.extraService += 1;
+						break;
+					case 'Incident':
+						resObj.incidents += 1;
+						break;
+					case 'Inquiry':
+						resObj.enquiry += 1;
+						break;
+					default:
+						resObj.unknownType += 1;
+				}
+				if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
+					resObj.resolved += 1;
+				} else {
+					if (!gr.u_status_reason.toString() && gr.u_status.toString() == 'In Progress') {
+						resObj.inProgress += 1;
+					} else {
+						switch (gr.u_status_reason.toString()) {
+							case 'Waiting for internal approval':
+								resObj.internalApproval += 1;
+								break;
+							case 'Hold Ticket per Users Request':
+								resObj.onHold += 1;
+								break;
+							case 'Waiting for User to Validate':
+								resObj.userToValidate += 1;
+								break;
+							case 'Internal Dependency':
+								resObj.internalDependency += 1;
+								break;
+							case 'Waiting for User to Take Action':
+								resObj.userToTakeAction += 1;
+								break;
+							case 'Additional Info Needed From User':
+								resObj.additionalInfoNeededFromUser += 1;
+								break;
+							case 'Monitoring':
+								resObj.monitoring += 1;
+								break;
+							case 'Waiting for 3rd party vendor to take act':
+								resObj.thirdParty += 1;
+								break;
+							default:
+								gs.log("hellow unknown" + gr.u_incident_id);
+								resObj.unknown += 1;
+						}
+					}
+				}
+			}
+			var statusObj = JSON.stringify(resObj);
+			gs.log("hellow unknown" + statusObj);
+			return statusObj;
+		} catch (error) {
+			gs.log("error is " + error);
+		}
+	},
+	'getStatusUserwise': function () {
+		try {
+			var resObj = {};
+			// var sysIdList = this.getParameter('sysparm_sysIdList');
+			var gr = new GlideRecord('u_wsr_table');
+			gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^u_assiginee_name!=Others^ORu_assiginee_name=NULL');
+			gr.query();
+			var count = gr.getRowCount();
+			resObj.totalCount = count;
+			resObj.incidents = 0;
+			resObj.extraService = 0;
+			resObj.enquiry = 0;
+			resObj.unknownType = 0;
+			resObj.resolved = 0;
+			resObj.internalApproval = 0;
+			resObj.onHold = 0;
+			resObj.userToValidate = 0;
+			resObj.internalDependency = 0;
+			resObj.userToTakeAction = 0;
+			resObj.additionalInfoNeededFromUser = 0;
+			resObj.monitoring = 0;
+			resObj.thirdParty = 0;
+			resObj.unknown = 0;
+			while (gr.next()) {
+				switch (gr.u_incident_type.toString()) {
+					case 'Extra Service':
+						resObj.extraService += 1;
+						break;
+					case 'Incident':
+						resObj.incidents += 1;
+						break;
+					case 'Inquiry':
+						resObj.enquiry += 1;
+						break;
+					default:
+						resObj.unknownType += 1;
+				}
+				if (gr.u_status.toString() == 'Resolved' || gr.u_status.toString() == 'Closed') {
+					resObj.resolved += 1;
+				} else {
+					switch (gr.u_status_reason.toString()) {
+						case 'Waiting for internal approval':
+							resObj.internalApproval += 1;
+							break;
+						case 'Hold Ticket per Users Request':
+							resObj.onHold += 1;
+							break;
+						case 'Waiting for User to Validate':
+							resObj.userToValidate += 1;
+							break;
+						case 'Internal Dependency':
+							resObj.internalDependency += 1;
+							break;
+						case 'Waiting for User to Take Action':
+							resObj.userToTakeAction += 1;
+							break;
+						case 'Additional Info Needed From User':
+							resObj.additionalInfoNeededFromUser += 1;
+							break;
+						case 'Monitoring':
+							resObj.monitoring += 1;
+							break;
+						case 'Waiting for 3rd party vendor to take act':
+							resObj.thirdParty += 1;
+							break;
+						default:
+							resObj.unknown += 1;
+					}
+				}
+			}
+			return JSON.stringify(resObj);
+		} catch (error) {
+			gs.log("error is " + error);
+		}
+	},
+	//Afrith Individual data
+	'individualReportWSR': function () {
+		// sysparm_wsrData
+		var wsrInfo = this.getParameter('sysparm_wsrData');
+		var gr = new GlideRecord("u_wsr_table");
+		gr.addEncodedQuery('u_create_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_resolve_date_timeONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()^ORu_status=In Progress^ORu_status=Pending^u_assiginee_name!=Others^u_status!=Transferred');
+		gr.query();
+		var total = gr.getRowCount();
 
-        gs.log("wreindividual" + total);
-        var indData = new global.IndividualReport();
-        var dataObject = {
-            sshanawaz: {
-                resolved: Number(indData.getResolvedcount("sshanawaz")),
-                totalTicket: Number(indData.getTotalcount("sshanawaz")),
-                inProgress: Number(indData.getInProgressCount("sshanawaz"))
-            },
-            ay2: {
-                inProgress: Number(indData.getInProgressCount("ay2")),
-                resolved: Number(indData.getResolvedcount("ay2")),
-                totalTicket: Number(indData.getTotalcount("ay2"))
-            },
-            mr11: {
-                inProgress: Number(indData.getInProgressCount("mr11")),
-                resolved: Number(indData.getResolvedcount("mr11")),
-                totalTicket: Number(indData.getTotalcount("mr11"))
-            },
-            msangeetha1: {
-                inProgress: Number(indData.getInProgressCount("msangeetha1")),
-                resolved: Number(indData.getResolvedcount("msangeetha1")),
-                totalTicket: Number(indData.getTotalcount("msangeetha1"))
-            },
-            apandi: {
-                inProgress: Number(indData.getInProgressCount("apandi")),
-                resolved: Number(indData.getResolvedcount("apandi")),
-                totalTicket: Number(indData.getTotalcount("apandi"))
-            },
-            mkhaliq: {
-                inProgress: Number(indData.getInProgressCount("mkhaliq")),
-                resolved: Number(indData.getResolvedcount("mkhaliq")),
-                totalTicket: Number(indData.getTotalcount("mkhaliq"))
-            },
-            totalTickets: total,
-        };
-        var inprog = dataObject.ay2.inProgress + dataObject.sshanawaz.inProgress + dataObject.mr11.inProgress + dataObject.msangeetha1.inProgress +dataObject.apandi.inProgress +dataObject.mkhaliq.inProgress;
-        var resvld = dataObject.ay2.resolved + dataObject.sshanawaz.resolved + dataObject.mr11.resolved +dataObject.msangeetha1.resolved +dataObject.apandi.resolved+dataObject.mkhaliq.resolved;
-        var sentToEvent = JSON.stringify(dataObject);
-        var htmlData = "<style>  table,  td,  th {    border: 1px solid black;    text-align: center;  }  th,  td {    padding: 3px;  }</style><table>    <tr>        <th>Candidate</th>        <th>Inprogress</th>        <th>Resolved</th>        <th>Total</th>        <th>Work Orders</th>    </tr>    <tr>        <td>" + "Shanawaz" + "</td>        <td>" + dataObject.sshanawaz.inProgress + "</td>        <td>" + dataObject.sshanawaz.resolved + "</td>        <td>" + dataObject.sshanawaz.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Afrith" + "</td>        <td>" + dataObject.ay2.inProgress + "</td>        <td>" + dataObject.ay2.resolved + "</td>        <td>" + dataObject.ay2.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Sangeetha" + "</td>        <td>" + dataObject.msangeetha1.inProgress + "</td>        <td>" + dataObject.msangeetha1.resolved + "</td>        <td>" + dataObject.msangeetha1.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Arun Pandi" + "</td>        <td>" + dataObject.apandi.inProgress + "</td>        <td>" + dataObject.apandi.resolved + "</td>        <td>" + dataObject.apandi.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Mohd Khaliq" + "</td>        <td>" + dataObject.mkhaliq.inProgress + "</td>        <td>" + dataObject.mkhaliq.resolved + "</td>        <td>" + dataObject.mkhaliq.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + " Shakeel" + "</td>        <td>" + dataObject.mr11.inProgress + "</td>        <td>" + dataObject.mr11.resolved + "</td>        <td>" + dataObject.mr11.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Team Total" + "</td>        <td>" + inprog + "</td>        <td>" + resvld + "</td>        <td>" + total + "</td>        <td>" + 0 + "</td>    </tr> " + "</table>";
-        gs.log("wreindividual" + sentToEvent);
-        gs.eventQueue('wsr.individual', current, wsrInfo, htmlData);
-        return "Event Scheduled";
-    },
-    'dailyStatus': function() {
-        //variables
-        var incidentId, summary, ticketType, statusReason = "",
-            status = "";
-        var htmlData = "";
+		gs.log("wreindividual" + total);
+		var indData = new global.IndividualReport();
+		var dataObject = {
+			sshanawaz: {
+				resolved: Number(indData.getResolvedcount("sshanawaz")),
+				totalTicket: Number(indData.getTotalcount("sshanawaz")),
+				inProgress: Number(indData.getInProgressCount("sshanawaz"))
+			},
+			ay2: {
+				inProgress: Number(indData.getInProgressCount("ay2")),
+				resolved: Number(indData.getResolvedcount("ay2")),
+				totalTicket: Number(indData.getTotalcount("ay2"))
+			},
+			mr11: {
+				inProgress: Number(indData.getInProgressCount("mr11")),
+				resolved: Number(indData.getResolvedcount("mr11")),
+				totalTicket: Number(indData.getTotalcount("mr11"))
+			},
+			msangeetha1: {
+				inProgress: Number(indData.getInProgressCount("msangeetha1")),
+				resolved: Number(indData.getResolvedcount("msangeetha1")),
+				totalTicket: Number(indData.getTotalcount("msangeetha1"))
+			},
+			apandi: {
+				inProgress: Number(indData.getInProgressCount("apandi")),
+				resolved: Number(indData.getResolvedcount("apandi")),
+				totalTicket: Number(indData.getTotalcount("apandi"))
+			},
+			mkhaliq: {
+				inProgress: Number(indData.getInProgressCount("mkhaliq")),
+				resolved: Number(indData.getResolvedcount("mkhaliq")),
+				totalTicket: Number(indData.getTotalcount("mkhaliq"))
+			},
+			totalTickets: total,
+		};
+		var inprog = dataObject.ay2.inProgress + dataObject.sshanawaz.inProgress + dataObject.mr11.inProgress + dataObject.msangeetha1.inProgress + dataObject.apandi.inProgress + dataObject.mkhaliq.inProgress;
+		var resvld = dataObject.ay2.resolved + dataObject.sshanawaz.resolved + dataObject.mr11.resolved + dataObject.msangeetha1.resolved + dataObject.apandi.resolved + dataObject.mkhaliq.resolved;
+		var sentToEvent = JSON.stringify(dataObject);
+		var htmlData = "<style>  table,  td,  th {    border: 1px solid black;    text-align: center;  }  th,  td {    padding: 3px;  }</style><table>    <tr>        <th>Candidate</th>        <th>Inprogress</th>        <th>Resolved</th>        <th>Total</th>        <th>Work Orders</th>    </tr>    <tr>        <td>" + "Shanawaz" + "</td>        <td>" + dataObject.sshanawaz.inProgress + "</td>        <td>" + dataObject.sshanawaz.resolved + "</td>        <td>" + dataObject.sshanawaz.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Afrith" + "</td>        <td>" + dataObject.ay2.inProgress + "</td>        <td>" + dataObject.ay2.resolved + "</td>        <td>" + dataObject.ay2.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Sangeetha" + "</td>        <td>" + dataObject.msangeetha1.inProgress + "</td>        <td>" + dataObject.msangeetha1.resolved + "</td>        <td>" + dataObject.msangeetha1.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Arun Pandi" + "</td>        <td>" + dataObject.apandi.inProgress + "</td>        <td>" + dataObject.apandi.resolved + "</td>        <td>" + dataObject.apandi.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Mohd Khaliq" + "</td>        <td>" + dataObject.mkhaliq.inProgress + "</td>        <td>" + dataObject.mkhaliq.resolved + "</td>        <td>" + dataObject.mkhaliq.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + " Shakeel" + "</td>        <td>" + dataObject.mr11.inProgress + "</td>        <td>" + dataObject.mr11.resolved + "</td>        <td>" + dataObject.mr11.totalTicket + "</td>        <td>" + 0 + "</td>    </tr> " + " <tr>        <td>" + "Team Total" + "</td>        <td>" + inprog + "</td>        <td>" + resvld + "</td>        <td>" + total + "</td>        <td>" + 0 + "</td>    </tr> " + "</table>";
+		gs.log("wreindividual" + sentToEvent);
+		gs.eventQueue('wsr.individual', current, wsrInfo, htmlData);
+		return "Event Scheduled";
+	},
+	'dailyStatus': function () {
+		//variables
+		var incidentId, summary, ticketType, statusReason = "",
+			status = "";
+		var htmlData = "";
 
-        var ticketCount = "";
-        var tickets = this.getParameter('sysparm_dailyTickets');
-        var gr = new GlideRecord('u_wsr_table');
-        gr.addEncodedQuery('sys_idIN' + tickets);
-        gr.query();
-        var count = gr.getRowCount();
-        gs.log('Daily reports========================>' + count);
-        while (gr.next()) {
-            incidentId = gr.u_incident_id;
-            summary = gr.u_resolution;
-            ticketType = gr.u_incident_type,
-                statusReason = gr.u_status_reason;
-            status = gr.u_status;
-            gs.log("qwerty" + summary);
-            var a = new GlideDate();
-            a.setValue(gr.u_create_date_time);
-            var today = gs.now();
-            var differ = gs.dateDiff(a, today, false).toString();
-            var aging = differ.replace("00:00:00", " ") == " " ? "New (Today's Ticket)" : differ.replace("00:00:00", " ");
+		var ticketCount = "";
+		var tickets = this.getParameter('sysparm_dailyTickets');
+		var gr = new GlideRecord('u_wsr_table');
+		gr.addEncodedQuery('sys_idIN' + tickets);
+		gr.query();
+		var count = gr.getRowCount();
+		gs.log('Daily reports========================>' + count);
+		while (gr.next()) {
+			incidentId = gr.u_incident_id;
+			summary = gr.u_resolution;
+			ticketType = gr.u_incident_type,
+				statusReason = gr.u_status_reason;
+			status = gr.u_status;
+			gs.log("qwerty" + summary);
+			var a = new GlideDate();
+			a.setValue(gr.u_create_date_time);
+			var today = gs.now();
+			var differ = gs.dateDiff(a, today, false).toString();
+			var aging = differ.replace("00:00:00", " ") == " " ? "New (Today's Ticket)" : differ.replace("00:00:00", " ");
 
-            htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number :" + incidentId + "</b></h4>   <b style='margin: 10px 0;'>Summary:</b> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging : " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Incident Type : " + ticketType + "</b><br><b> Status : " + status + "- (" + statusReason + ")" + "</b></h5> <b>-----------------------------------------------------------</b></div>";
+			htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number :" + incidentId + "</b></h4>   <b style='margin: 10px 0;'>Summary:</b> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging : " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Incident Type : " + ticketType + "</b><br><b> Status : " + status + "- (" + statusReason + ")" + "</b></h5> <b>-----------------------------------------------------------</b></div>";
 
-            ticketCount = ticketCount + "<h5><b>" + incidentId + "</b></h5>";
-        }
-        gs.eventQueue('daily.status.lenovo', current, htmlData, ticketCount);
-        return "event schedule complete";
-    },
-    type: 'wsr_utils'
+			ticketCount = ticketCount + "<h5><b>" + incidentId + "</b></h5>";
+		}
+		gs.eventQueue('daily.status.lenovo', current, htmlData, ticketCount);
+		return "event schedule complete";
+	},
+	'dsrShanawaz': function (ITSM) {
+		//variables
+		var incidentId, summary, status = "";
+		var htmlData = "";
+		var ticketCount = "";
+		var tickets = this.getParameter('sysparm_dailyTickets');
+		if (!tickets) {
+			tickets = ITSM;
+		}
+		var gr = new GlideRecord('u_wsr_table');
+		gr.addEncodedQuery('sys_idIN' + tickets);
+		gr.query();
+		var count = gr.getRowCount();
+		gs.log('Daily reports========================>' + count);
+		while (gr.next()) {
+			incidentId = gr.u_incident_id;
+			summary = gr.u_resolution;
+			status = gr.u_status == 'Transferred' ? 'Transferred' : gr.u_status_reason;
+			var a = new GlideDate();
+			a.setValue(gr.u_create_date_time);
+			var today = gs.now();
+			var differ = gs.dateDiff(a, today, false).toString();
+			// var aging = differ.replace("00:00:00", " ") == " " ? "New (Today's Ticket)" : differ.replace("00:00:00", " ");
+			var daysDifference = differ.split(' ')[0]; // Extracting the days part
+			var aging = daysDifference == "00:00:00" ? "New (Today's Ticket)" : daysDifference;
+
+			// htmlData = htmlData + "<div style='white-space: pre-wrap; '>  <h4><b>Ticket number: " + incidentId + "</b></h4>   <b style='margin: 10px 0;'>Summary:</b> <p style='white-space: pre-wrap;'>" + summary + "</p> <h5 style='margin: 0px; ' ><b> Aging: " + aging + "</b></h5>   <h5 style='margin: 0px; '><b> Status: " + status + "</b></h5> <b>-----------------------------------------------------------</b></div>";
+
+			htmlData = htmlData + '<div style="white-space: pre-wrap; font-family: \'Arial\', sans-serif; color: #333; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">' +
+				'<h4 style="margin-bottom: 10px; color: #007BFF;"><b>Ticket number: ' + incidentId + '</b></h4>' +
+				'<p style="margin: 0; font-size: 16px;"><b>Summary:</b></p>' +
+				'<p style="white-space: pre-wrap; margin: 5px 0 15px;">' + summary + '</p>' +
+				'<h5 style="margin: 0; font-size: 14px;"><b>Aging:</b> ' + aging + '</h5>' +
+				'<h5 style="margin: 0; font-size: 14px;"><b>Status:</b> ' + status + '</h5>' +
+				'<hr style="border: 0.5px solid #ddd; margin: 15px 0;">' +
+				'</div>';
+
+			ticketCount = ticketCount + '<p style="margin: 5px 0 15px; font-size: 16px;"><b>' + incidentId + '</b></p>';
+		}
+		gs.eventQueue('daily.status.lenovo.shanawaz', current, htmlData, ticketCount);
+		return "event schedule complete";
+	},
+	"sendWorkeffortMail": function (week) {
+		var htmlForReport = "";
+		var query;
+		if (week == "lastWeek") {
+			query = "u_dateONLast week@javascript:gs.beginningOfLastWeek()@javascript:gs.endOfLastWeek()";
+		} else if (week == "currentWeek") {
+			query = "u_dateONThis week@javascript:gs.beginningOfThisWeek()@javascript:gs.endOfThisWeek()"
+		} else {
+			gs.addErrorMessage("Error in Query");
+			return null;
+		}
+		var wsrwrkeffrtAgg = new GlideAggregate('u_wsr_work_effort');
+		var arr = [];
+		wsrwrkeffrtAgg.addEncodedQuery(query);
+		wsrwrkeffrtAgg.addAggregate('SUM', 'u_effort_in_hrs');
+		wsrwrkeffrtAgg.groupBy('u_assignee');
+		wsrwrkeffrtAgg.query();
+		while (wsrwrkeffrtAgg.next()) {
+			var assigneeName = wsrwrkeffrtAgg.getValue('u_assignee');
+			var totalEffort = wsrwrkeffrtAgg.getAggregate('SUM', 'u_effort_in_hrs');
+
+			var low = 0,
+				medium = 0,
+				high = 0,
+				critical = 0,
+				wrkOrder = 0;
+			var wsrTblAgg = new GlideAggregate('u_wsr_work_effort');
+			wsrTblAgg.addEncodedQuery(query);
+			wsrTblAgg.addQuery('u_assignee', wsrwrkeffrtAgg.getValue('u_assignee'));
+			wsrTblAgg.addAggregate('SUM', 'u_effort_in_hrs');
+			wsrTblAgg.groupBy('u_incident.u_priority');
+			wsrTblAgg.query();
+			while (wsrTblAgg.next()) {
+				if (wsrTblAgg.getValue('u_incident.u_priority') == 'Low') {
+					low = wsrTblAgg.getAggregate('SUM', 'u_effort_in_hrs');
+				} else if (wsrTblAgg.getValue('u_incident.u_priority') == 'High') {
+					high = wsrTblAgg.getAggregate('SUM', 'u_effort_in_hrs');
+				} else if (wsrTblAgg.getValue('u_incident.u_priority') == 'Medium') {
+					medium = wsrTblAgg.getAggregate('SUM', 'u_effort_in_hrs')
+				} else if (wsrTblAgg.getValue('u_incident.u_priority') == 'Critical') {
+					critical = wsrTblAgg.getAggregate('SUM', 'u_effort_in_hrs')
+				}
+			}
+			var wrkordrEffort = new GlideAggregate('u_wsr_work_effort');
+			wrkordrEffort.addQuery(query);
+			wrkordrEffort.addQuery('u_assignee', wsrwrkeffrtAgg.getValue('u_assignee'));
+			wrkordrEffort.addNotNullQuery('u_transferred_incident');
+			wrkordrEffort.addAggregate('SUM', 'u_effort_in_hrs');
+			wrkordrEffort.groupBy('u_assignee');
+			wrkordrEffort.query();
+			while (wrkordrEffort.next()) {
+				wrkOrder = wrkordrEffort.getAggregate('SUM', 'u_effort_in_hrs')
+			}
+			var obj = {
+				"name": assigneeName,
+				"effort": totalEffort,
+				"p4": low,
+				"p3": medium,
+				"p2": high,
+				"p1": critical,
+				"workOrder": wrkOrder
+			};
+			arr.push(obj);
+		}
+		gs.log(arr.toString());
+		htmlForReport = '<style>    table {      width: 100%;      border-collapse: collapse;      margin-top: 20px;    }    th,    td {      padding: 10px;      text-align: left;      border: 1px solid #dddddd;    }    th {      background-color: #f2f2f2;    }    tr:hover {      background-color: #f5f5f5;    }  </style>  <h2>Work Efforts</h2>  <table border="1">    <tr>      <th>Name</th>      <th>Effort</th>      <th>P1 Incidents</th>      <th>P2 Incidents</th>      <th>P3 Incidents</th>      <th>P4 Incidents</th>      <th>Work Orders</th>      <th>Training</th>    </tr> ';
+		for (var i = 0; i < arr.length; i++) {
+			htmlForReport = htmlForReport + '<tr>    <td>' + arr[i].name + '</td>      <td>' + arr[i].effort + '</td>      <td>' + arr[i].p1 + '</td>      <td>' + arr[i].p2 + '</td>      <td>' + arr[i].p3 + '</td>      <td>' + arr[i].p4 + '</td>      <td>' + arr[i].workOrder + '</td>      <td>0</td>    </tr>';
+		}
+		htmlForReport = htmlForReport + '</table>';
+		gs.log(htmlForReport);
+		return htmlForReport;
+		
+	},
+	type: 'wsr_utils'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-02-25 07:15:27</sys_created_on>
         <sys_id>1f82ec28db512110cb16b7e8f4961969</sys_id>
-        <sys_mod_count>70</sys_mod_count>
+        <sys_mod_count>83</sys_mod_count>
         <sys_name>wsr_utils</sys_name>
-        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_package display_value="WSR" source="97abf65397307150e24677d71153afeb">97abf65397307150e24677d71153afeb</sys_package>
         <sys_policy/>
         <sys_scope display_value="WSR">97abf65397307150e24677d71153afeb</sys_scope>
         <sys_update_name>sys_script_include_1f82ec28db512110cb16b7e8f4961969</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-01-19 17:17:21</sys_updated_on>
+        <sys_updated_by>surendar.m@dyooti.com</sys_updated_by>
+        <sys_updated_on>2024-02-20 06:49:29</sys_updated_on>
     </sys_script_include>
     <sys_claim action="INSERT_OR_UPDATE">
         <claim_owner_scope display_value="WSR">97abf65397307150e24677d71153afeb</claim_owner_scope>
